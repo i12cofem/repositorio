@@ -1,10 +1,8 @@
-/*
- * main.cc
- *
- *  Created on: 28 nov. 2022
- *      Author: josem
- */
+#include <iostream>
+using namespace std;
+int main(){
 
+	cout<<"Hola loco"<<endl;
+	return 0;
 
-hola soy main ppajcbjhacjacacsasca
-
+}

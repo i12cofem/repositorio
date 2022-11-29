@@ -16,6 +16,34 @@
 using namespace std;
 int main(){
 
-	cout<<"Prueba de que va todo oko"<<endl;
+	int eleccion;
+	do{
+		cout<<"1.-Registrar usuario"<<endl;
+		cout<<"2.-Iniciar Sesion"<<endl;
+		cout<<"3.-Cerrar Sesion"<<endl;
+		cout<<"4.-Listar Cursos"<<endl;
+		cout<<"5.-Cerrar Sesion y cerras sistema"<<endl;
+		cin>>eleccion;
+		switch(eleccion){
+				case 1:
+					cout<<"Has elegido la oopcion de registrar usuario"<<endl;
+					cout<<"Inserte Nombre,Apellidos,Dni,CorreoUCO"<<endl;
+					cout<<"Ya has sido registrado"<<endl;
+					break;
+				case 2:
+					break;
+
+				case 3:
+					break;
+				case 4:
+					break;
+				case 5:
+					return 0;
+					break;
+				}
+	}while(eleccion!=5);
+
+		return 0;
+
 
 }

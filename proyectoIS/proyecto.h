@@ -6,7 +6,7 @@
 using namespace std;
 
 #ifndef CURSO_H
-#define	CURSO_Hola
+#define	CURSO_H
 
 
 

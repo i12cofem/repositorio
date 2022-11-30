@@ -6,7 +6,7 @@
 using namespace std;
 
 #ifndef CURSO_H
-#define	CURSO_H
+#define	CURSO_Hola
 
 
 
@@ -46,7 +46,7 @@ class Admin : public Usuarios{
 
 		list<string> mostrar_usuarios();
 		void eliminar_usuario();
-		void anadir_curso();
+		void añadir_curso();
 		bool comprobar_curso();
 		bool borrar_curso();
 		string listar_cursos();

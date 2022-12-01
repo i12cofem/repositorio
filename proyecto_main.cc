@@ -13,6 +13,7 @@
  * */
 #include <iostream>
 #include <string>
+#include "proyecto.h"
 using namespace std;
 int main(){
 
@@ -20,7 +21,7 @@ int main(){
 	do{
 		cout<<"1.-Registrar usuario"<<endl;
 		cout<<"2.-Iniciar Sesion"<<endl;
-		cout<<"3.-Cerrar Sesion"<<endl;
+		cout<<"3.-Crear Cursos"<<endl;
 		cout<<"4.-Listar Cursos"<<endl;
 		cout<<"5.-Cerrar Sesion y cerras sistema"<<endl;
 		cin>>eleccion;
@@ -34,14 +35,25 @@ int main(){
 					break;
 
 				case 3:
+				{
+						Cursos c(0);
+						c.anadir_curso();
+
+				//anadir_cursoprueba();
 					break;
+				}
 				case 4:
+				{
+						Usuarios u("pepe");
+						u.mostrar_cursos();
+				}
 					break;
-				case 5:
+
+				default:
 					return 0;
 					break;
 				}
-	}while(eleccion!=5);
+	}while(eleccion==0);
 
 		return 0;
 

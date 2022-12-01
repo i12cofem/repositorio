@@ -1,12 +1,12 @@
+#ifndef CURSO_H
+#define	CURSO_H
+
 #include <iostream>
 #include <stdlib.h>
 #include <string>
 #include <list>
 
 using namespace std;
-
-#ifndef CURSO_H
-#define	CURSO_H
 
 
 class Usuarios{
@@ -47,6 +47,7 @@ class Usuarios{
 class Alumnos: public Usuarios{
 	public:
 
+        Alumnos(string dni, string nombre, string apellido, string correo_uco, string password) : Usuarios(dni, nombre, apellido, correo_uco, password){};
 
 		bool inscribirse();
 
@@ -54,8 +55,13 @@ class Alumnos: public Usuarios{
 	private:
 };
 
+
+/*
+
 class Admin : public Usuarios{
 	public:
+
+        Admin(string dni, string nombre, string apellido, string correo_uco, string password);
 
 		list<string> mostrar_usuarios();
 		void eliminar_usuario();
@@ -70,13 +76,15 @@ class Admin : public Usuarios{
 
 class Coordinador : public Usuarios {
 	public:
-
+        Coordinador(string dni, string nombre, string apellido, string correo_uco, string password);
 		void asignar_recurso();
 		void modificar_cursos();
 
 
 	private:
 };
+
+*/
 
 class Cursos{
 
@@ -91,7 +99,7 @@ class Cursos{
 		string descripcion_;
 	public:
 
-		Cursos(int idC, string nombrecurso, string fechaInicio, string fechaFin, list<Usuarios>lista_espera = {}, string asignatura, string recursos, string descripcion);
+		Cursos(int idC, string nombrecurso, string fechaInicio, string fechaFin, string asignatura, string recursos, string descripcion, list<Usuarios>lista_espera = {});
 
 		string mostrar_informacion();
 		string ver_asignaturas();
@@ -121,6 +129,9 @@ class Cursos{
 
 };
 
+
+/*
+
 class Visitante{
 	private:
 		int idV_;
@@ -141,15 +152,10 @@ class Visitante{
 
 };
 
-
-
+*/
 
 
 #endif
-
-
-
-
 
 
 

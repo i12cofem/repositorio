@@ -11,6 +11,8 @@ Usuarios::Usuarios(string dni, string nombre, string apellido, string correo_uco
 
 }
 
+/*
+
 Cursos::Cursos(int idC, string nombrecurso, string fechaInicio, string fechaFin, string asignatura, string recursos, string descripcion, list<Usuarios>lista_espera){
 
 	idC_ = idC;
@@ -22,5 +24,6 @@ Cursos::Cursos(int idC, string nombrecurso, string fechaInicio, string fechaFin,
 	recursos_ = recursos;
 	descripcion_ = descripcion;
 
-
 }
+
+*/

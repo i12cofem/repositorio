@@ -56,14 +56,11 @@ class Alumnos: public Usuarios{
 };
 
 
-/*
-
 class Admin : public Usuarios{
 	public:
 
-        Admin(string dni, string nombre, string apellido, string correo_uco, string password);
+        Admin(string dni, string nombre, string apellido, string correo_uco, string password) : Usuarios(dni, nombre, apellido, correo_uco, password){};
 
-		list<string> mostrar_usuarios();
 		void eliminar_usuario();
 		void anadir_curso();
 		bool comprobar_curso();
@@ -74,6 +71,7 @@ class Admin : public Usuarios{
 	private:
 };
 
+/*
 class Coordinador : public Usuarios {
 	public:
         Coordinador(string dni, string nombre, string apellido, string correo_uco, string password);
@@ -85,6 +83,8 @@ class Coordinador : public Usuarios {
 };
 
 */
+
+/*
 
 class Cursos{
 
@@ -124,13 +124,9 @@ class Cursos{
         inline string set_recursos(string recursos){return recursos_ = recursos;};
         inline string set_descripcion(string descripcion){return descripcion_ = descripcion;};
 
-
-
-
 };
 
 
-/*
 
 class Visitante{
 	private:
@@ -153,7 +149,6 @@ class Visitante{
 };
 
 */
-
 
 #endif
 

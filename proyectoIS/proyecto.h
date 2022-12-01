@@ -2,12 +2,11 @@
 #include <stdlib.h>
 #include <string>
 #include <list>
-#include <time>
 
 using namespace std;
 
 #ifndef CURSO_H
-#define	CURSO_Hola
+#define	CURSO_H
 
 
 
@@ -30,6 +29,10 @@ class Usuarios{
 		void estadisticas();
 
 	inline string get_dni(){return dni_;};
+	inline string get_nombre(){return nombre_;};
+	inline string get_apellido(){return apellido_;};
+	inline string get_correoUco(){return correo_uco_;};
+	inline string get_password(){return password_;};
 };
 
 
@@ -71,7 +74,7 @@ class Cursos{
 
 	private:
 		int idC_;
-		string nombre_;
+		string nombrecurso_;
 		string fechaInicio;
 		string fechaFin;
 		list<Usuarios>lista_espera_;
@@ -79,21 +82,29 @@ class Cursos{
 		string recursos_;
 		string descripcion_;
 	public:
+
+		Cursos(int idC, string nombrecurso, string fechaInicio, string fechaFin, list<Usuarios>lista_espera = {}, string asignatura, string recursos, string descripcion);
+
 		string mostrar_informacion();
 		string ver_asignaturas();
 		string ver_profesor();
+
 };
 
 class Visitante{
 	private:
 		int idV_;
 	public:
+
+		Visitante(int idV);
+
 		string ver_cursos();
 		bool registrarse();
 
-};
+	inline int get_idVisitante(){return idV_;};
 
-//getters y setters usuarios
+
+};
 
 
 

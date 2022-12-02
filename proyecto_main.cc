@@ -36,8 +36,8 @@ int main(){
 
 				case 3:
 				{
-						Cursos c(0);
-						c.anadir_curso();
+						Admin aux("0","0","0","0","0");
+						aux.anadir_curso();
 
 				//anadir_cursoprueba();
 					break;
@@ -45,7 +45,7 @@ int main(){
 				case 4:
 				{
 						Usuarios u("pepe");
-						u.mostrar_cursos();
+						//u.mostrar_cursos();
 				}
 					break;
 

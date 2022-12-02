@@ -72,6 +72,57 @@ Cursos getCursos(string ced){
 	}
 	return aux;
 }*/
+void Admin::anadir_curso(){
+   ofstream escritura;
+   string codigo;
+    string id;
+    string nombre,fechainicio,fechafinal,aforo;
+    ifstream comprobar;
+    bool existe=false;
+    comprobar.open("cursos.txt",ios::in);
+    escritura.open("cursos.txt",ios::app);
+    if(escritura.is_open()&&comprobar.is_open()){
+    cout<<"Ingresa el codigo del curso";
+    fflush(stdin);
+    getline(cin,id);
+        do{
+            comprobar.seekg(0);
+
+            getline(comprobar,codigo);
+            while(!comprobar.eof()){
+                getline(comprobar,nombre);
+                getline(comprobar,fechainicio);
+                getline(comprobar,fechafinal);
+
+                if(codigo==id){
+                    existe=true;
+                    cout<<"Ya existe un curso con ese identificador";
+                 exit(-1);
+                }
+                getline(comprobar,codigo);
+            }
+            if(comprobar.eof()&&codigo!=id)
+                existe=false;
+        }while(existe==true);
+
+    codigo=id;
+    cout<<"Ingresa el codigo del curso"<<endl;
+    cout<<codigo<<endl;
+    cout<<"Introduce el nombre del curso"<<endl;
+    fflush(stdin);
+    getline(cin,nombre);
+    cout<<"Ingresa la fecha de inicio del curso"<<endl;
+    fflush(stdin);
+    getline(cin,fechainicio);
+    cout<<"Ingresa la fecha de fin del curso"<<endl;
+    fflush(stdin);
+    getline(cin,fechafinal);
+    escritura<<codigo<<"\n"<<nombre<<"\n"<<fechainicio<<"\n"<<fechafinal<<"\n";
+    escritura.close();
+
+    }
+}
+/*
 void Cursos::anadir_curso(){
 	Cursos aux(0);
 	int id;
@@ -102,9 +153,9 @@ void Usuarios::mostrar_cursos(){
 	 }
 }
 void anadir_cursoo(){
+*/
 
 
-}
 /*
 bool Alumnos::inscribirse(){
 	Alumnos a;

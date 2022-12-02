@@ -67,6 +67,8 @@ class Admin : public Usuarios{
 
 		string listar_cursos();
 		void estadisticas();
+		void anadir_curso();
+		bool borrar_curso();
 
 
 	private:
@@ -99,8 +101,7 @@ class Cursos{
 		string mostrar_informacion();
 		string ver_asignaturas();
 		string ver_profesor();
-		void anadir_curso();
-				bool borrar_curso();
+
 
 		//Getters
 

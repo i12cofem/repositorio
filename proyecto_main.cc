@@ -14,29 +14,41 @@
 #include <iostream>
 #include <string>
 #include "proyecto.h"
+#include <stdlib.h>
+#define CLEAR "cls"
+
 using namespace std;
 int main(){
 	string respuesta;
 	string confirmacion="si";
 	int eleccion;
-	cout<<"ACCEDIENDO AL SISTEMA"<<endl;
-	cout<<"CADA VEZ QUE SE ACCEDA A UNA DE LAS OPCIONES:\nEL PROGRAMA FINALIZARA SU ESTADO PARA REALIZAR CAMBIOS EN LA BASE DE DATOS"<<endl;
-	cout<<"¿Es usted admin?"<<endl;
+	cout<<"|-------------------------------------------------------------------------------------------------------------------------|"<<endl;
+	cout<<"|                                                     ACCEDIENDO AL SISTEMA                                               |"<<endl;
+	cout<<"|                                       CADA VEZ QUE SE ACCEDA A UNA DE LAS OPCIONES:                                     |"<<endl;
+	cout<<"|                         EL PROGRAMA FINALIZARA SU ESTADO PARA REALIZAR CAMBIOS EN LA BASE DE DATOS                      |"<<endl;
+	cout<<"|-------------------------------------------------------------------------------------------------------------------------|"<<endl;
+	cout<<"|                                                        ¿Es usted admin?                                                 |"<<endl;
+	cout<<"|-------------------------------------------------------------------------------------------------------------------------|"<<endl;
 	cin>>respuesta;
 	if(respuesta=="si"){
-		cout<<"Introduzca la contraseña admin"<<endl;
+		cout<<"|-------------------------------------------------------------------------------------------------------------------------|"<<endl;
+		cout<<"|                                              Introduzca la contraseña admin                                             |"<<endl;
+		cout<<"|-------------------------------------------------------------------------------------------------------------------------|"<<endl;
 		string pass;
 		cin>>pass;
 		if(pass!="root"){
 			perror("USTED NO ES EL ADMIN");
 			exit(-1);
 			}else{
-				cout<<"Accediendo al menu de admin"<<endl;
+				cout<<"|-------------------------------------------------------------------------------------------------------------------------|"<<endl;
+				cout<<"|                                                    @Menu ADMIN@                                                         |"<<endl;
+				cout<<"|-------------------------------------------------------------------------------------------------------------------------|"<<endl;
 
-					do{
-						cout<<"1.-Crear Cursos"<<endl;
-						cout<<"2.-Listar Cursos"<<endl;
-						cout<<"3.-Cerrar Sesion y cerras sistema"<<endl;
+					do{ cout<<"|-------------------------------------------------------------------------------------------------------------------------|"<<endl;
+						cout<<"|                                                    1.-Crear Cursos                                                      |"<<endl;
+						cout<<"|                                                    2.-Listar Cursos                                                     |"<<endl;
+						cout<<"|                                             3.-Cerrar Sesion y cerrar sistema                                           |"<<endl;
+						cout<<"|-------------------------------------------------------------------------------------------------------------------------|"<<endl;
 						cin>>eleccion;
 						switch(eleccion){
 
@@ -44,9 +56,7 @@ int main(){
 							{
 									Admin aux("0","0","0","0","0");//Existe un admin auxiliar al que se le asigna la funcion de añadir curso;
 									aux.anadir_curso();
-
-
-								break;
+    								break;
 							}
 							case 2:
 							{
@@ -60,26 +70,42 @@ int main(){
 								return 0;
 								break;
 							}
-					}while(eleccion==0);
+					}while(eleccion!=3);
 			}
 		}else{
-			cout<<"ACCEDIENDO AL MENU DE VISITANTES...ESPERE"<<endl;
+
+			cout<<"|-------------------------------------------------------------------------------------------------------------------------|"<<endl;
+			cout<<"|                                         ACCEDIENDO AL MENU DE VISITANTES...ESPERE                                       |"<<endl;
+			cout<<"|-------------------------------------------------------------------------------------------------------------------------|"<<endl;
+			cout<<"|                                                ¿ES USTED ALUMNO DEL SISTEMA?                                            |"<<endl;
+			cout<<"|-------------------------------------------------------------------------------------------------------------------------|"<<endl;
+			cin>>respuesta;
+
+			if(respuesta=="si"){
+				cout<<"|-------------------------------------------------------------------------------------------------------------------------|"<<endl;
+				cout<<"|                                         ACCEDIENDO AL MENU DE ALUMNOS...ESPERE                                          |"<<endl;
+				cout<<"|-------------------------------------------------------------------------------------------------------------------------|"<<endl;
+
+				return 0;
+			}else{
 
 			do{
-
-					cout<<"1.-Registrar usuario"<<endl;
-					cout<<"2.-Iniciar Sesion"<<endl;
-					cout<<"3.-Listar Cursos"<<endl;
-					cout<<"4.-Cerrar Sesion y cerras sistema"<<endl;
+					cout<<"|-------------------------------------------------------------------------------------------------------------------------|"<<endl;
+					cout<<"|                                                1.-Registrar usuario                                                     |"<<endl;
+					cout<<"|                                                  2.-Iniciar Sesion                                                      |"<<endl;
+					cout<<"|                                                   3.-Listar Cursos                                                      |"<<endl;
+					cout<<"|                                            4.-Cerrar Sesion y cerrar sistema                                            |"<<endl;
+					cout<<"|-------------------------------------------------------------------------------------------------------------------------|"<<endl;
 					cin>>eleccion;
 					switch(eleccion){
 							case 1:
-								cout<<"Has elegido la oopcion de registrar usuario"<<endl;
-								cout<<"Inserte Nombre,Apellidos,Dni,CorreoUCO"<<endl;
-								cout<<"Ya has sido registrado"<<endl;
+							{
+								Visitante aux(0);
+								aux.registrarse();
 								break;
-
+							}
 							case 2:
+								iniciar_sesion();
 								break;
 							case 3:
 							{
@@ -93,10 +119,10 @@ int main(){
 								return 0;
 								break;
 							}
-				}while(eleccion==0);
+				}while(eleccion!=4);
 		}
 
-
+		}
 
 		return 0;
 

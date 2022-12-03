@@ -7,6 +7,7 @@
 #include <list>
 
 using namespace std;
+bool iniciar_sesion();
 /*
  * Las clases han sido pensadas para un nivel de desarrollo de codigo mas sofisticado,sin embargo:
  * 		Se han dejado creadas con todos sus atributos por un posible desarrollo del sistema psoterior.
@@ -132,20 +133,18 @@ class Cursos{
 };
 
 
-/*
 class Visitante{
-	private:
-		int idV_;
-	public:
-		Visitante(int idV);
-		string ver_cursos();
-		bool registrarse();
-	//Getters
-	inline int get_idVisitante(){return idV_;};
-	//Setters
-	inline int set_idVisitante(int idV){return idV_ = idV;};
+    private:
+        int idV_;
+    public:
+        Visitante(int idV){idV_ = idV;};
+        string ver_cursos();
+        void registrarse(); //Bool -> void
+    //Getters
+    inline int getidVisitante(){return idV_;};
+    //Setters
+    inline int setidVisitante(int idV){return idV_ = idV;};
 };
-*/
 
 
 #endif

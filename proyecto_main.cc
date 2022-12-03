@@ -84,9 +84,35 @@ int main(){
 			if(respuesta=="si"){
 				cout<<"|-------------------------------------------------------------------------------------------------------------------------|"<<endl;
 				cout<<"|                                         ACCEDIENDO AL MENU DE ALUMNOS...ESPERE                                          |"<<endl;
+				cout<<"|                                                  1.-Iniciar Sesion                                                      |"<<endl;
+				cout<<"|                                                   2.-Listar Cursos                                                      |"<<endl;
+				cout<<"|                                                   3.-Inscrbirse                                                         |"<<endl;
+				cout<<"|                                                   4.-Cerrar                                                             |"<<endl;
 				cout<<"|-------------------------------------------------------------------------------------------------------------------------|"<<endl;
+				cin>>eleccion;
+				do{
+					switch(eleccion){
+						case 1:
+						{
+							Alumnos a("aux");
+							a.login();
+						}
+							break;
+						case 2:
+						{
+							Usuarios u("aux");
+							u.mostrar_cursos();
+						}
+							break;
+						case 3:
+						{
+							Alumnos a("aux");
+							a.inscribirse();
+						}
+						break;
+					}
+				}while(eleccion!=4);
 
-				return 0;
 			}else{
 
 			do{
@@ -102,18 +128,22 @@ int main(){
 							{
 								Visitante aux(0);
 								aux.registrarse();
+
+
 								break;
 							}
 							case 2:
-								iniciar_sesion();
+							{	Usuarios u("aux");
+								u.login();
+							}
 								break;
 							case 3:
 							{
-									Usuarios u("pepe");
+									Usuarios u("aux");
 									u.mostrar_cursos();
 									//u.mostrar_cursos();
 							}
-								break;
+							break;
 
 							default:
 								return 0;

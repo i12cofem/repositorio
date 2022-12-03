@@ -218,7 +218,7 @@ void Visitante::registrarse(){
     }
 }
 
-bool iniciar_sesion(){
+bool Usuarios::login(){
 	//me tiene que leer el fichero registrarme
 	//si el dni y la contraseña coinciden a lo introducido me lo guardo en un fichero y retorno true, si no, pues error
 	ofstream escritura;
@@ -229,10 +229,14 @@ bool iniciar_sesion(){
 	escritura.open("login.txt",ios::out);
 	lectura.open("alumnos.txt",ios::in);
 	if(escritura.is_open()&&lectura.is_open()){
-		cout<<"Ingresa el Dni para iniciar sesion"<<endl;
+		cout<<"|-------------------------------------------------------------------------------------------------------------------------|"<<endl;
+		cout<<"|                                     Ingresa el Dni para iniciar sesion                                                  |"<<endl;
+		cout<<"|-------------------------------------------------------------------------------------------------------------------------|"<<endl;
 		fflush(stdin);
 		cin>>dniprueba;
-		cout<<"Ingresa la password para iniciar sesion"<<endl;
+		cout<<"|-------------------------------------------------------------------------------------------------------------------------|"<<endl;
+		cout<<"|                                    Ingresa la password para iniciar sesion                                              |"<<endl;
+		cout<<"|-------------------------------------------------------------------------------------------------------------------------|"<<endl;
 		fflush(stdin);
 		cin>>passwordp;
 		   getline(cin,dni);
@@ -249,11 +253,14 @@ bool iniciar_sesion(){
 		                if(dni==dniprueba&&password==passwordp){
 		                   escritura<<dni<<endl;
 		                   escritura<<password<<endl;
-
+		                   cout<<"|-------------------------------------------------------------------------------------------------------------------------|"<<endl;
+		                   cout<<"|                                             INICIO SESION CORRECTAMENTE                                                 |"<<endl;
+		                   cout<<"|-------------------------------------------------------------------------------------------------------------------------|"<<endl;
 		                }
 		                getline(lectura,dni);
 		            }
-		            if(lectura.eof()&&dni!=dniprueba)
+		            if(lectura.eof()&&dni!=dniprueba&&password!=passwordp);
+
 		                existe=false;
 		        }while(existe==true);
 
@@ -265,5 +272,36 @@ bool iniciar_sesion(){
 return existe;
 
 }
+void Alumnos::inscribirse(){
+	ofstream escritura;
+		ifstream lectura;
+		ifstream lecturalogin;
+		string curso;
+		string aux;
+		string dnialumno;
+		cout<<"|-------------------------------------------------------------------------------------------------------------------------|"<<endl;
+		cout<<"|                             Introduce el identificador del curso al que quiere acceder                                  |"<<endl;
+		cout<<"|-------------------------------------------------------------------------------------------------------------------------|"<<endl;
+		fflush(stdin);
+		cin>>curso;
+		string nuevocurso=curso +".txt";
+		escritura.open(nuevocurso,ios::out);
+		lectura.open("cursos.txt",ios::in);
+		lecturalogin.open("login.txt",ios::in);
+
+
+		if(escritura.is_open()&&lectura.is_open()&&lecturalogin.is_open()){
+			getline(lecturalogin,dnialumno);
+
+			 escritura<<dnialumno<<"\n";
+			 cout<<"|-------------------------------------------------------------------------------------------------------------------------|"<<endl;
+			 cout<<"|-------------------------------------YA SE HA INSCTRITO A UN CURSO. ¡Bienvenido!-----------------------------------------|"<<endl;
+			 cout<<"|-------------------------------------------------------------------------------------------------------------------------|"<<endl;
+		}
+		escritura.close();
+		lectura.close();
+		lecturalogin.close();
+
+	}
 
 

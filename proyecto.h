@@ -7,7 +7,7 @@
 #include <list>
 
 using namespace std;
-bool iniciar_sesion();
+
 /*
  * Las clases han sido pensadas para un nivel de desarrollo de codigo mas sofisticado,sin embargo:
  * 		Se han dejado creadas con todos sus atributos por un posible desarrollo del sistema psoterior.
@@ -54,9 +54,9 @@ class Usuarios{
 class Alumnos: public Usuarios{
 	public:
 
-        Alumnos(string dni, string nombre, string apellido, string correo_uco, string password) : Usuarios(dni, nombre, apellido, correo_uco, password){};
+        Alumnos(string dni, string nombre="empty", string apellido="empty", string correo_uco="empty", string password="empty") : Usuarios(dni, nombre, apellido, correo_uco, password){};
 
-		bool inscribirse();
+		void inscribirse();//era bool
 
 
 	private:

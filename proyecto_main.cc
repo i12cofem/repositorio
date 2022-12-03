@@ -16,44 +16,87 @@
 #include "proyecto.h"
 using namespace std;
 int main(){
-
+	string respuesta;
+	string confirmacion="si";
 	int eleccion;
-	do{
-		cout<<"1.-Registrar usuario"<<endl;
-		cout<<"2.-Iniciar Sesion"<<endl;
-		cout<<"3.-Crear Cursos"<<endl;
-		cout<<"4.-Listar Cursos"<<endl;
-		cout<<"5.-Cerrar Sesion y cerras sistema"<<endl;
-		cin>>eleccion;
-		switch(eleccion){
-				case 1:
-					cout<<"Has elegido la oopcion de registrar usuario"<<endl;
-					cout<<"Inserte Nombre,Apellidos,Dni,CorreoUCO"<<endl;
-					cout<<"Ya has sido registrado"<<endl;
-					break;
-				case 2:
-					break;
+	cout<<"ACCEDIENDO AL SISTEMA"<<endl;
+	cout<<"CADA VEZ QUE SE ACCEDA A UNA DE LAS OPCIONES:\nEL PROGRAMA FINALIZARA SU ESTADO PARA REALIZAR CAMBIOS EN LA BASE DE DATOS"<<endl;
+	cout<<"¿Es usted admin?"<<endl;
+	cin>>respuesta;
+	if(respuesta=="si"){
+		cout<<"Introduzca la contraseña admin"<<endl;
+		string pass;
+		cin>>pass;
+		if(pass!="root"){
+			perror("USTED NO ES EL ADMIN");
+			exit(-1);
+			}else{
+				cout<<"Accediendo al menu de admin"<<endl;
 
-				case 3:
-				{
-						Admin aux("0","0","0","0","0");
-						aux.anadir_curso();
+					do{
+						cout<<"1.-Crear Cursos"<<endl;
+						cout<<"2.-Listar Cursos"<<endl;
+						cout<<"3.-Cerrar Sesion y cerras sistema"<<endl;
+						cin>>eleccion;
+						switch(eleccion){
 
-				//anadir_cursoprueba();
-					break;
-				}
-				case 4:
-				{
-						Usuarios u("pepe");
-						//u.mostrar_cursos();
-				}
-					break;
+							case 1:
+							{
+									Admin aux("0","0","0","0","0");//Existe un admin auxiliar al que se le asigna la funcion de añadir curso;
+									aux.anadir_curso();
 
-				default:
-					return 0;
-					break;
-				}
-	}while(eleccion==0);
+
+								break;
+							}
+							case 2:
+							{
+									Admin aux("0","0","0","0","0"); //Existe un usuario auxiliar al que se le asigna la funcion para listar todos los cursos
+									aux.mostrar_cursos();
+
+							}
+								break;
+
+							default:
+								return 0;
+								break;
+							}
+					}while(eleccion==0);
+			}
+		}else{
+			cout<<"ACCEDIENDO AL MENU DE VISITANTES...ESPERE"<<endl;
+
+			do{
+
+					cout<<"1.-Registrar usuario"<<endl;
+					cout<<"2.-Iniciar Sesion"<<endl;
+					cout<<"3.-Listar Cursos"<<endl;
+					cout<<"4.-Cerrar Sesion y cerras sistema"<<endl;
+					cin>>eleccion;
+					switch(eleccion){
+							case 1:
+								cout<<"Has elegido la oopcion de registrar usuario"<<endl;
+								cout<<"Inserte Nombre,Apellidos,Dni,CorreoUCO"<<endl;
+								cout<<"Ya has sido registrado"<<endl;
+								break;
+
+							case 2:
+								break;
+							case 3:
+							{
+									Usuarios u("pepe");
+									u.mostrar_cursos();
+									//u.mostrar_cursos();
+							}
+								break;
+
+							default:
+								return 0;
+								break;
+							}
+				}while(eleccion==0);
+		}
+
+
 
 		return 0;
 

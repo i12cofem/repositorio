@@ -50,28 +50,7 @@ int getint(string msj){
 	cin>>n;
 	return n;
 }
-/*
-Alumnos getAlumnos(long ced){
-	fstream e("registro.txt", ios::out | ios::in | ios:: binary);
-	Alumnos aux;
-	if(e.is_open()){
-		e.seekg((ced-1)*sizeof(Alumnos));
-		e.read((char*)&aux,sizeof(Alumnos));
-		e.close();
-	}
-	return aux;
-}*/
-/*
-Cursos getCursos(string ced){
-	fstream e("cursos.txt", ios::out | ios::in | ios:: binary);
-	Cursos aux;
-	if(e.is_open()){
-		e.seekg(()*sizeof(Cursos));
-		e.read((char*)&aux,sizeof(Cursos));
-		e.close();
-	}
-	return aux;
-}*/
+
 void Admin::anadir_curso(){
    ofstream escritura;
    string codigo;
@@ -82,7 +61,7 @@ void Admin::anadir_curso(){
     comprobar.open("cursos.txt",ios::in);
     escritura.open("cursos.txt",ios::app);
     if(escritura.is_open()&&comprobar.is_open()){
-    cout<<"Ingresa el codigo del curso";
+    cout<<"Ingresa el codigo del curso"<<endl;
     fflush(stdin);
     getline(cin,id);
         do{
@@ -95,9 +74,11 @@ void Admin::anadir_curso(){
                 getline(comprobar,fechafinal);
 
                 if(codigo==id){
-                    existe=true;
-                    cout<<"Ya existe un curso con ese identificador";
+                	existe=true;
+
+                    perror("\nINTENTASTE DUPLICAR UN CURSO::ERROR INTEGRIDAD\n");
                  exit(-1);
+
                 }
                 getline(comprobar,codigo);
             }
@@ -122,49 +103,33 @@ void Admin::anadir_curso(){
 
     }
 }
-/*
-void Cursos::anadir_curso(){
-	Cursos aux(0);
-	int id;
-	string nombrecurso;
-	fflush(stdin);
-	id=getint("Identificador del curso");
-	fflush(stdin);
-	nombrecurso=getString("Introduce el nombre del curso");
-
-	aux.set_nombreCurso(nombrecurso);
-	aux.set_idC(id);
-	fstream e("cursos.txt",ios:: out | ios::in | ios::binary );
-	if(e.is_open()){
-		e.seekp((+1)*sizeof(Cursos));
-		e.write((char*)&aux,sizeof(Cursos));
-		e.close();
-	}
-}
 void Usuarios::mostrar_cursos(){
-	string s;
-	ifstream f( "cursos.txt" );
-	 if ( f.is_open() ) {
-	 getline( f, s );
-	 cout << s << endl;
+	ifstream lectura;
+	string codigo;
+	string nombre;
+	string fechainicio;
+	string fechafin;
+	lectura.open("cursos.txt",ios::in);
 
-	 getline( f, s );
-	 cout << atof( s.c_str() ) << endl;
-	 }
+	if(lectura.is_open()){
+		getline(lectura,codigo);
+	while(!lectura.eof()){
+
+
+
+		getline(lectura,nombre);
+		getline(lectura,fechainicio);
+		getline(lectura,fechafin);
+		cout<<"EL codigo del curso es: "<<codigo<<endl;
+		cout<<"EL nombre del curso "<<codigo<<" es "<< nombre<<endl;
+		cout<<"La fecha inicio del curso "<<codigo<<" es "<< fechainicio<<endl;
+		cout<<"La fecha fin del curso "<<codigo<<" es "<< fechafin<<endl;
+		getline(lectura,codigo);
+
+	}
+	}
+	lectura.close();
+
 }
-void anadir_cursoo(){
-*/
 
 
-/*
-bool Alumnos::inscribirse(){
-	Alumnos a;
-	string correo;
-	cout<<"Introduce el correo que tienes como alumno"
-	cin>>correo;
-	a.set_correo(correo);
-
-	fstream e("")
-
-}
-*/

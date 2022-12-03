@@ -7,6 +7,12 @@
 #include <list>
 
 using namespace std;
+/*
+ * Las clases han sido pensadas para un nivel de desarrollo de codigo mas sofisticado,sin embargo:
+ * 		Se han dejado creadas con todos sus atributos por un posible desarrollo del sistema psoterior.
+ * 		Al no usar bases de datos por incompatibilidad con c++ en eclipse se llega al desarrollo de:
+ * 			USAR FICHEROS DE TEXTO PLANO DEJANDO INDICADAS LAS CLASES;
+ */
 
 
 class Usuarios{
@@ -62,9 +68,7 @@ class Admin : public Usuarios{
         Admin(string dni, string nombre, string apellido, string correo_uco, string password): Usuarios(dni, nombre ,apellido, correo_uco, password){};
 		//list<string> mostrar_usuarios(); NO SE TRABAJARA POR FALTA DE TIEMPO
 		void eliminar_usuario();
-
 		bool comprobar_curso();
-
 		string listar_cursos();
 		void estadisticas();
 		void anadir_curso();

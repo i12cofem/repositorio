@@ -9,7 +9,7 @@ class Alumnos: public Usuarios{
 
         Alumnos(string dni = "", string nombre="empty", string apellido="empty", string correo_uco="empty", string password="empty") : Usuarios(dni, nombre, apellido, correo_uco, password){};
 
-		void inscribirse(Cursos curso1, Alumnos Alumno1);//era bool
+		void inscribirse();//era bool
 
 
 	private:

@@ -8,7 +8,7 @@ class Visitante{
         int idV_;
     public: 
         Visitante(int idV = 0){idV_ = idV;};
-        void ver_cursos(Cursos curso1);
+        //void ver_cursos(Cursos curso1);
         void registrarse(Alumnos alumnos1); //Bool -> void
 
     //Getters
@@ -16,6 +16,8 @@ class Visitante{
     //Setters
     inline int setidVisitante(int idV){return idV_ = idV;};
 };
+
+
 
 
 

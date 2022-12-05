@@ -56,7 +56,7 @@ Cursos::Cursos(string idCurso, string nombrecurso, string fechaInicio, string fe
 
 }
 
-void Visitante::ver_cursos(Cursos curso1)
+/* void ver_cursos(Cursos curso1)
 {
     int i=0;
     ifstream lectura;
@@ -112,13 +112,13 @@ void Visitante::ver_cursos(Cursos curso1)
 
             cout<<"Hay un total de "<<i<<" cursos registrados en este sistema\n\n";
     }
-/*     else
+     else
     {
         error();
-    } */
+    }
     lectura.close();
     //pausa();
-}
+} */
 
 
 
@@ -521,10 +521,10 @@ void Admin::borrar_curso(Cursos curso1)
         }
 
     }
-     else
+/*      else
     {
         error();
-    }
+    } */
     lectura.close();
     auxiliar.close();
     remove("cursos.txt");
@@ -782,9 +782,9 @@ void Admin::anadir_curso(Cursos curso1){
     verificador.close();
     //pausa();
 
-    //ofstream nuevo;
-    //string nombrenuevo= curso1.get_idCurso() +".txt";
-    //nuevo.open(nombrenuevo,ios::out); //si existe se pierden los datos anteriores y si no existe se crea
+    ofstream nuevo;
+    string nombrenuevo= curso1.get_idCurso() +".txt";
+    nuevo.open(nombrenuevo,ios::out); //si existe se pierden los datos anteriores y si no existe se crea
     
 }
 
@@ -967,7 +967,7 @@ void Visitante::registrarse(Alumnos alumno1){
 	string iniciarnombre = alumno1.get_nombre();
 	string iniciarapellido = alumno1.get_apellido();
 	string iniciarcorreouco = alumno1.get_correoUco();
-	string iniciarcontraseña = alumno1.get_password();
+	string iniciarcontrasena = alumno1.get_password();
     bool coincidencia=false;
     verificador.open("alumnos.txt",ios::in); //abrir en modo entrada
     escritura.open("alumnos.txt",ios::app); //Añade y si no existe lo crea
@@ -994,7 +994,7 @@ void Visitante::registrarse(Alumnos alumno1){
                 getline(verificador,iniciarnombre);
                 getline(verificador,iniciarapellido);
                 getline(verificador,iniciarcorreouco);
-				getline(verificador, iniciarcontraseña);
+				getline(verificador, iniciarcontrasena);
 
                 if(iniciardni==DNIPRUEBA)
                 {
@@ -1058,10 +1058,10 @@ void Visitante::registrarse(Alumnos alumno1){
         cout<<"El registro se ha completado correctamente.\n\n";
     }
 
-    else
+/*     else
     {
         error();
-    }
+    } */
 
     escritura.close();
     verificador.close();

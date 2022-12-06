@@ -3,7 +3,7 @@
  *
  *  Autores: i12cofem e i82gavaj
  *  Fecha inicio del proyecto: 23/11/2022
- *  Fecha finalización del proyecto: 06/12/2022
+ *  Fecha finalización del proyecto: 06/12/2022,
  *
  *
  *

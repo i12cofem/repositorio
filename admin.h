@@ -10,8 +10,8 @@ class Admin : public Usuarios{
 		//void eliminar_usuario();
 		//bool comprobar_curso();
 		//void estadisticas();
-		void anadir_curso(Cursos curso1);
-		void borrar_curso(Cursos curso1);
+		bool anadir_curso(Cursos curso1);
+		bool borrar_curso(Cursos curso1);
 		void modificar_curso(Cursos curso1);
 
 

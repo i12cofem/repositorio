@@ -1,6 +1,4 @@
-/*aqui se van a introducir
- *las funciones que vamos a necesitar para elaborar el proyecto;
- *las
+/*
  */
 #include <iostream>
 #include <conio.h>
@@ -361,7 +359,7 @@ void Admin::modificar_curso(Cursos curso1)
 
 
 
-void Admin::borrar_curso(Cursos curso1)
+bool Admin::borrar_curso(Cursos curso1)
 {
     ifstream lectura;
     ofstream auxiliar;
@@ -454,6 +452,7 @@ void Admin::borrar_curso(Cursos curso1)
     auxiliar.close();
     remove("cursos.txt");
     rename("auxiliar.txt","cursos.txt");
+    return encontrado;
     //pausa();
 }
 
@@ -562,7 +561,7 @@ return existe;
 
 
 
-void Admin::anadir_curso(Cursos curso1){
+bool Admin::anadir_curso(Cursos curso1){
 	ofstream escritura;
     ifstream verificador;
     string auxCodigo;
@@ -712,6 +711,7 @@ void Admin::anadir_curso(Cursos curso1){
     ofstream nuevo;
     string nombrenuevo= curso1.get_idCurso() +".txt";
     nuevo.open(nombrenuevo,ios::out); //si existe se pierden los datos anteriores y si no existe se crea
+    return coincidencia;
     
 }
 
@@ -824,7 +824,7 @@ void Alumnos::inscribirse(){
 }
 //-------------------------------------------------------FUNCIONA-----------------------------------------------------//
 
-void Visitante::registrarse(Alumnos alumno1){
+bool Visitante::registrarse(Alumnos alumno1){
 	
     ofstream escritura; // Sirve para abrir el fichero y escribir en el
     ifstream verificador; // Sirve para abrir el fichero y leer en el
@@ -933,6 +933,7 @@ void Visitante::registrarse(Alumnos alumno1){
     escritura.close();
     verificador.close();
 	//pause();
+    return coincidencia;
 }
 
 //-----------------------------------------------------------------------------------------------------------------------//

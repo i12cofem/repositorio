@@ -1,3 +1,32 @@
+/*
+ * usuarios.h
+ *
+ *  Autores: i12cofem e i82gavaj
+ *  Fecha inicio del proyecto: 23/11/2022
+ *  Fecha finalización del proyecto: 06/12/2022
+ *
+ *
+ *
+ */
+/*
+ * En este fichero vamos a tener la definición de la clase Usuarios, con sus respectivos atributos y métodos
+ *
+ *
+ * NOTA:Las clases han sido pensadas para un nivel de desarrollo de codigo mas sofisticado,sin embargo:
+ * 		Se han dejado creadas con todos sus atributos por un posible desarrollo del sistema posterior.
+ * 		Al no usar bases de datos por incompatibilidad con c++ en eclipse se llega al desarrollo de:
+ *
+ *
+ * 						USO FICHEROS DE TEXTO PLANO DEJANDO INDICADAS LAS CLASES;
+ *
+ *
+ *
+ * */
+
+
+
+
+
 
 #ifndef USUARIOS_H
 #define	USUARIOS_H

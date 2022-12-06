@@ -1,7 +1,23 @@
-/*aqui se van a introducir
- *las funciones que vamos a necesitar para elaborar el proyecto;
- *las
+/*
+ * proyecto.cc
+ *
+ *  Autores: i12cofem e i82gavaj
+ *  Fecha inicio del proyecto: 23/11/2022
+ *  Fecha finalización del proyecto: 06/12/2022
+ *
+ *
+ *
  */
+/*
+ * En este fichero vamos a tener las funciones necesarias para la definición del comportamiento
+ * de nuestra aplicación
+ *
+ *
+ *
+ *
+ *
+ * */
+
 #include <iostream>
 #include <conio.h>
 #include <string.h>
@@ -9,6 +25,8 @@
 #include <stdlib.h>
 
 //Limpiar pantalla
+
+
 #ifdef _WIN32
 #define CLEAR "cls"
 #elif defined(unix)||defined(__unix__)||defined(__unix)||defined(__APPLE__)||defined(__MACH__)
@@ -56,107 +74,11 @@ Cursos::Cursos(string idCurso, string nombrecurso, string fechaInicio, string fe
 
 }
 
-/* void ver_cursos(Cursos curso1)
-{
-    int i=0;
-    ifstream lectura;
-    lectura.open("cursos.txt",ios::in);
-
-    //------------------------------------------Iniciadores----------------------------------------//
-	string iniciar_Codigo = curso1.get_idCurso();
-	string iniciar_Nombrecurso = curso1.get_nombreCurso();
-	string iniciar_Fechainicio = curso1.get_fechaInicio();
-	string iniciar_FechaFin = curso1.get_fechaFin();
-	string iniciar_Asignatura = curso1.get_asignatura();
-	string iniciar_Recurso = curso1.get_recursos();
-	string iniciar_Descripcion = curso1.get_descripcion();
-	string iniciar_aforo = curso1.get_aforo();
-
-	//---------------------------------------------------------------------------------------------//
-
-
-    if(lectura.is_open())
-    {
-        cout<<"\t\t\t\t***Listado de todos los clientes***\t\t\t\t\n\n";
-        getline(lectura,iniciar_Codigo);
-        while(!lectura.eof())
-        {
-            i++;
-            getline(lectura,iniciar_Nombrecurso);
-            getline(lectura,iniciar_Fechainicio);
-            getline(lectura,iniciar_FechaFin);
-            getline(lectura,iniciar_Asignatura);
-            getline(lectura,iniciar_Recurso);
-            getline(lectura,iniciar_Descripcion);
-            getline(lectura,iniciar_aforo);
-
-
-            cout<<"-------------------------------------------------------------------------------------"<<endl;
-            cout<<"C\242digo: "<<iniciar_Codigo<<endl;
-            cout<<"Nombre: "<<iniciar_Nombrecurso<<endl;
-            cout<<"Fecha de inicio: "<<iniciar_Fechainicio<<endl;
-            cout<<"Fecha de Finalizaci\242n: "<<iniciar_FechaFin<<endl;
-            cout<<"Asignatura: "<<iniciar_Asignatura<<endl;
-            cout<<"Recursos disponibles: "<<iniciar_Recurso<<endl;
-            cout<<"Descripci\242n del curso: "<<iniciar_Descripcion<<endl;
-            cout<<"Aforo: "<<iniciar_aforo<<endl;
-            cout<<"--------------------------------------------------------------------------------------"<<endl;
-            cout<<"\n\n";
-            getline(lectura,iniciar_Codigo);
-        }
-
-        if(i==1)
-            cout<<"Hay un solo curso registrado en el sistema\n\n";
-
-        else
-
-            cout<<"Hay un total de "<<i<<" cursos registrados en este sistema\n\n";
-    }
-     else
-    {
-        error();
-    }
-    lectura.close();
-    //pausa();
-} */
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//--------------------------------------------------------FUNCIONA----------------------------------//
+//------------------------------Función que permite visualizar el curso que haya seleccionado un usuarios--------------------//
 
 void Usuarios::visualizar_cursos(Cursos curso1, string codigo){
     ifstream mostrar;
@@ -210,18 +132,14 @@ void Usuarios::visualizar_cursos(Cursos curso1, string codigo){
 }
 
 
-//----------------------------------------------------------------------------------------------------------------//
+//---------------------------------------------------------------------------------------------------------------------------//
 
 
 
 
 
 
-//---------------------------------------------------FUNCIONA-------------------------------------------//
-
-
-
-
+//------------------------Funcion que permite modificar un curso al admin----------------------------------------------------//
 
 void Admin::modificar_curso(Cursos curso1)
 {
@@ -230,10 +148,13 @@ void Admin::modificar_curso(Cursos curso1)
     ofstream auxiliar;
     string auxCodigo;
     string codigoModif;
-    string auxNombre;
-    string auxDomicilio;
-    string auxCelular;
-    string auxFecha;
+    string auxcurso;
+    string auxinicio;
+    string auxfinal;
+    string auxasignatura;
+    string auxrecursos;
+    string auxdescripcion;
+    string auxaforo;
     //------------------------------------------Iniciadores----------------------------------------//
 	string iniciar_Codigo = curso1.get_idCurso();
 	string iniciar_Nombrecurso = curso1.get_nombreCurso();
@@ -258,14 +179,14 @@ void Admin::modificar_curso(Cursos curso1)
     if(lectura.is_open()&&verificador.is_open()&&auxiliar.is_open())
     {
         fflush(stdin);
-        cout<<"Ingresa el c\242digo del cliente que deseas modificar: ";
+        cout<<"Ingrese el c\242digo del curso que desee modificar: ";
         getline(cin,auxCodigo);
 
         if(auxCodigo=="")
         {
             do
             {
-                cout<<"c\242digo de cliente no v\240lido!, intentalo nuevamente: ";
+                cout<<"c\242digo del curso no v\240lido!, intentalo nuevamente: ";
                 getline(cin,auxCodigo);
             }
             while(auxCodigo=="");
@@ -291,9 +212,9 @@ void Admin::modificar_curso(Cursos curso1)
 
                 cout<<"**********************************************";
                 cout<<"\n\n";
-                cout<<"Ingresa la nueva informaci\242n para el cliente\n\n";
+                cout<<"Ingresa la nueva informacion para el curso\n\n";
                 fflush(stdin);
-                cout<<"Ingresa el c\242digo del cliente: ";
+                cout<<"Ingresa el codigo del curso: ";
                 getline(cin,auxCodigo);
                 if(auxCodigo==codigoModif)
                 {
@@ -323,8 +244,8 @@ void Admin::modificar_curso(Cursos curso1)
                             if(auxCodigo==iniciar_Codigo)
                             {
                                 coincidencia=true;
-                                cout<<"\n\nYa existe un cliente con ese c\242digo!\n\n";
-                                cout<<"El cliente con ese c\242digo es: "<<iniciar_Nombrecurso<<"\n\n";
+                                cout<<"\n\nYa existe un curso con ese c\242digo!\n\n";
+                                cout<<"El curso con ese c\242digo es: "<<iniciar_Nombrecurso<<"\n\n";
                                 cout<<"Ingresa un c\242digo v\240lido!: ";
                                 getline(cin,auxCodigo);
 
@@ -332,7 +253,7 @@ void Admin::modificar_curso(Cursos curso1)
                                 {
                                     do
                                     {
-                                        cout<<"\nc\242digo de cliente no v\240lido!, ";
+                                        cout<<"\nc\242digo de curso no v\240lido!, ";
                                         cout<<"intentalo nuevamente: ";
                                         getline(cin,auxCodigo);
                                     }
@@ -353,43 +274,59 @@ void Admin::modificar_curso(Cursos curso1)
                     while(coincidencia==true);
                 }
                 system(CLEAR);
-                cout<<"***Modificar los datos de un cliente***\n\n";
-                cout<<"Ingresa el c\242digo del cliente que deseas modificar: ";
+                cout<<"***Modificar los datos de un curso***\n\n";
+                cout<<"Ingresa el c\242digo del curso que deseas modificar: ";
                 cout<<codigoModif;
                 //mostarRegistro(codigoModif);
                 cout<<"**********************************************";
                 cout<<"\n\n";
-                cout<<"Ingresa la nueva informaci\242n para el cliente\n\n";
-                cout<<"Ingresa el c\242digo del cliente: ";
+                cout<<"Ingresa la nueva informaci\242n para el curso\n\n";
+                cout<<"Ingresa el c\242digo del curso: ";
                 cout<<auxCodigo;
                 cout<<"\n\n";
                 fflush(stdin);
-                cout<<"Ingresa el nombre del cliente: ";
-                getline(cin,auxNombre);;
+                cout<<"Ingresa el nombre del curso: ";
+                getline(cin,auxcurso);
+                curso1.set_nombreCurso(auxcurso);
                 fflush(stdin);
                 cout<<"\n\n";
-                cout<<"Ingresa el domicilio del cliente: ";
-                getline(cin,auxDomicilio);
+                cout<<"Ingresa la fecha de inicio del curso: ";
+                getline(cin,auxinicio);
+                curso1.set_fechaInicio(auxinicio);
                 cout<<"\n\n";
                 fflush(stdin);
-                cout<<"Ingresa el n\243mero de telefono del cliente: ";
-                getline(cin,auxCelular);
+                cout<<"Ingresa la fecha final del curso: ";
+                getline(cin,auxfinal);
+                curso1.set_fechaFin(auxfinal);
                 cout<<"\n\n";
                 fflush(stdin);
-                cout<<"Ingresa la fecha de inscripci\242n del cliente: ";
-                getline(cin,auxFecha);
+                cout<<"Ingresa la asignatura del curso: ";
+                getline(cin,auxasignatura);
+                curso1.set_asignatura(auxasignatura);
                 cout<<"\n\n";
-                auxiliar<<iniciar_Codigo<<"\n"<<iniciar_Nombrecurso<<"\n"<<iniciar_Fechainicio<<"\n"<<iniciar_FechaFin
-                            <<"\n"<<iniciar_Asignatura<<"\n"<<iniciar_Recurso<<"\n"<<iniciar_Descripcion<<"\n"<<iniciar_aforo<<"\n";
+                fflush(stdin);
+                cout<<"Ingresa los recursos disponibles para el curso: ";
+                getline(cin,auxrecursos);
+                curso1.set_recursos(auxrecursos);
+                cout<<"\n\n";
+                fflush(stdin);
+                cout<<"Ingresa el aforo del cliente: ";
+                getline(cin, auxaforo);
+                curso1.set_aforo(auxaforo);
+                cout<<"\n\n";
+                fflush(stdin);
+
+                auxiliar<<curso1.get_idCurso()<<"\n"<<curso1.get_nombreCurso()<<"\n"<<curso1.get_fechaInicio()<<"\n"<<curso1.get_fechaFin()
+                            <<"\n"<<curso1.get_asignatura()<<"\n"<<curso1.get_recursos()<<"\n"<<curso1.get_descripcion()<<"\n"<<curso1.get_aforo()<<"\n";
                 cout<<"El Registro se ha modificado correctamente.\n\n";
             }
 
 
             else
             {
+                auxiliar<<curso1.get_idCurso()<<"\n"<<curso1.get_nombreCurso()<<"\n"<<curso1.get_fechaInicio()<<"\n"<<curso1.get_fechaFin()
+                            <<"\n"<<curso1.get_asignatura()<<"\n"<<curso1.get_recursos()<<"\n"<<curso1.get_descripcion()<<"\n"<<curso1.get_aforo()<<"\n";
 
-                auxiliar<<iniciar_Codigo<<"\n"<<iniciar_Nombrecurso<<"\n"<<iniciar_Fechainicio<<"\n"<<iniciar_FechaFin
-                            <<"\n"<<iniciar_Asignatura<<"\n"<<iniciar_Recurso<<"\n"<<iniciar_Descripcion<<"\n"<<iniciar_aforo<<"\n";
             }
 
 
@@ -397,14 +334,10 @@ void Admin::modificar_curso(Cursos curso1)
         }
 
     }
-/*     else
-    {
-        error();
-    } */ 
 
     if(encontrado==false)
     {
-        cout<<"\n\nNo se encontr\242 ning\243n registro con ese c\242digo!\n\n";
+        cout<<"\n\nNo se encontro ningun registro con ese codigo!\n\n";
     }
     lectura.close();
     verificador.close();
@@ -417,7 +350,11 @@ void Admin::modificar_curso(Cursos curso1)
 
 
 
-//---------------------------------------------------------------------------------------------------------------------//
+
+
+
+
+//--------------------------------------------------------------------------------------------------------------------------//
 
 
 
@@ -431,12 +368,12 @@ void Admin::modificar_curso(Cursos curso1)
 
 
 
-//-------------------------------------------------Funciona-----------------------------------------------//
+//----------------------------Funcion que permite borrar un cuso al admin---------------------------------------------------//
 
 
 
 
-void Admin::borrar_curso(Cursos curso1)
+bool Admin::borrar_curso(Cursos curso1)
 {
     ifstream lectura;
     ofstream auxiliar;
@@ -521,21 +458,19 @@ void Admin::borrar_curso(Cursos curso1)
         }
 
     }
-/*      else
-    {
-        error();
-    } */
+
     lectura.close();
     auxiliar.close();
     remove("cursos.txt");
     rename("auxiliar.txt","cursos.txt");
-    //pausa();
+    return encontrado;
+
 }
 
 
 
 
-//-------------------------------------------------------------------------------------------------------------------//
+//----------------------------------------------------------------------------------------------------------------------------//
 
 
 
@@ -550,7 +485,7 @@ void Admin::borrar_curso(Cursos curso1)
 
 
 
-//------------------------------------FUNCIONA------------------------------------------------------//
+//---------------------------Función que permite iniciar sesión al usuario------------------------------------------------------//
 
 
 bool Usuarios::login(){
@@ -595,7 +530,8 @@ bool Usuarios::login(){
 		                getline(lectura,aux);
 		                getline(lectura,iniciar_Password);
 
-		                if(iniciar_Dni==dniprueba&&iniciar_Password==passwordp){
+		                if(iniciar_Dni==dniprueba&&iniciar_Password==passwordp){ //Se comprueba que el dni y la contraseña están en el fichero alumnos
+		                   //existe = true;
 		                   escritura<<iniciar_Dni<<endl;
 		                   escritura<<iniciar_Password<<endl;
 		                   cout<<"|-------------------------------------------------------------------------------------------------------------------------|"<<endl;
@@ -604,7 +540,7 @@ bool Usuarios::login(){
 		                }
 		                getline(lectura,iniciar_Dni);
 		            }
-		            if(lectura.eof()&&iniciar_Dni!=dniprueba&&iniciar_Password!=passwordp);
+		            if(lectura.eof()&&iniciar_Dni!=dniprueba&&iniciar_Password!=passwordp)
 
 		                existe=false;
 		        }while(existe==true);
@@ -635,7 +571,7 @@ return existe;
 
 
 
-void Admin::anadir_curso(Cursos curso1){
+bool Admin::anadir_curso(Cursos curso1){
 	ofstream escritura;
     ifstream verificador;
     string auxCodigo;
@@ -688,13 +624,13 @@ void Admin::anadir_curso(Cursos curso1){
                 {
                     coincidencia=true;
                     cout<<"\n\nYa existe un curso con ese c\242digo!\n\n";
-                    cout<<"El curso con ese c\242digo es: "<< curso1.get_nombreCurso()<<"\n\n";
+                    cout<<"El curso con ese codigo es: "<< curso1.get_nombreCurso()<<"\n\n";
                     cout<<"Ingresa un c\242digo v\240lido!: ";
                     getline(cin,auxCodigo);
                     if(auxCodigo=="")
                         do
                         {
-                            cout<<"\nc\242digo de curso no v\240lido!, intentalo nuevamente: ";
+                            cout<<"\n codigo de curso no v\240lido!, intentalo nuevamente: ";
                             getline(cin,auxCodigo);
                         }
                         while(auxCodigo=="");
@@ -714,7 +650,7 @@ void Admin::anadir_curso(Cursos curso1){
         curso1.set_idCurso(auxCodigo);
         cout<<"\t\t\t\t***Dar de alta un curso***\t\t\t\t\n\n";
 
-        cout<<"Ingresa el c\242digo del curso: ";
+        cout<<"Ingresa el codigo del curso: ";
         cout<<curso1.get_idCurso();
         cout<<"\n\n";
         fflush(stdin);
@@ -761,7 +697,7 @@ void Admin::anadir_curso(Cursos curso1){
         cout<<"\n\n";
 		fflush(stdin);
 
-		cout<<"Ingrese el aforo del cliente: ";
+		cout<<"Ingrese el aforo del curso: ";
 		string aforo2;
         getline(cin, aforo2);
 		curso1.set_aforo(aforo2);
@@ -785,13 +721,14 @@ void Admin::anadir_curso(Cursos curso1){
     ofstream nuevo;
     string nombrenuevo= curso1.get_idCurso() +".txt";
     nuevo.open(nombrenuevo,ios::out); //si existe se pierden los datos anteriores y si no existe se crea
+    return coincidencia;
     
 }
 
-//-------------------------------------------------------------------------------------------------------------------//
+//---------------------------------------------------------------------------------------------------------------------------//
 
 
-//----------------------------------FUNCIONA------------------------------------------------------------------------//
+//----------------------------Función que permite inscribir un alumno a un curso-------------------------------------------------------------------------------//
 
 
 void Alumnos::inscribirse(Cursos curso1, Alumnos alumno1){
@@ -813,18 +750,18 @@ void Alumnos::inscribirse(Cursos curso1, Alumnos alumno1){
 			string iniciar_Recurso = curso1.get_recursos();
 			string iniciar_Descripcion = curso1.get_descripcion();
 			string iniciar_aforo = curso1.get_aforo();
-		//---------------------------------------------------//	
+		//---------------------------------------------------//
 
 	    if(verificador.is_open())
     	{
         cout<<"\t\t\t\t***Comprobando si existe el curso***\t\t\t\t\n\n";
         fflush(stdin);
-        cout<<"Ingresa el c\242digo del curso a inscribirse: ";
+        cout<<"Ingresa el codigo del curso a inscribirse: ";
         getline(cin,auxCodigo);
         if(auxCodigo=="")
             do
             {
-                cout<<"c\242digo de cliente no v\240lido!, intentalo nuevamente: ";
+                cout<<"codigo del curso no v\240lido!, intentalo nuevamente: ";
                 getline(cin,auxCodigo);
             }
             while(auxCodigo=="");
@@ -834,7 +771,7 @@ void Alumnos::inscribirse(Cursos curso1, Alumnos alumno1){
             getline(verificador,iniciar_Codigo);
             while(!verificador.eof())
             {
-                
+
                 getline(verificador, iniciar_Nombrecurso);
                 getline(verificador,iniciar_Fechainicio);
                 getline(verificador,iniciar_FechaFin);
@@ -846,14 +783,14 @@ void Alumnos::inscribirse(Cursos curso1, Alumnos alumno1){
                 if(iniciar_Codigo==auxCodigo)
                 {
                     coincidencia=true;
-                    cout<<"\n\nYa existe un cliente con ese c\242digo!\n\n";
-                    cout<<"El cliente con ese c\242digo es: "<<curso1.get_nombreCurso()<<"\n\n";
-                    cout<<"Ingresa un c\242digo v\240lido!: ";
+                    cout<<"\n\nYa existe un curso con ese codigo!\n\n";
+                    cout<<"El curso con ese codigo es: "<<curso1.get_nombreCurso()<<"\n\n";
+                    cout<<"Ingresa un codigo v\240lido!: ";
                     getline(cin,auxCodigo);
                     if(auxCodigo=="")
                         do
                         {
-                            cout<<"\nc\242digo de cliente no v\240lido!, intentalo nuevamente: ";
+                            cout<<"\n codigo de curso no v\240lido!, intentalo nuevamente: ";
                             getline(cin,auxCodigo);
                         }
                         while(auxCodigo=="");
@@ -889,12 +826,12 @@ void Alumnos::inscribirse(Cursos curso1, Alumnos alumno1){
 
 			cout<<"\t\t\t\t***Comprobando si existe el curso***\t\t\t\t\n\n";
         fflush(stdin);
-        cout<<"Ingresa el c\242digo del curso a inscribirse: ";
+        cout<<"Ingresa el codigo del curso a inscribirse: ";
         getline(cin,dniaux);
         if(dniaux=="")
             do
             {
-                cout<<"c\242digo de cliente no v\240lido!, intentalo nuevamente: ";
+                cout<<"codigo de curso no valido!, intentalo nuevamente: ";
                 getline(cin,dniaux);
             }
             while(dniaux=="");
@@ -904,20 +841,20 @@ void Alumnos::inscribirse(Cursos curso1, Alumnos alumno1){
             getline(verificador2,iniciar_Dni);
             while(!verificador2.eof())
             {
-                
+
 				getline(verificador2, iniciar_Password);
 
                 if(iniciar_Codigo==dniaux)
                 {
                     coincidencia=true;
-                    cout<<"\n\nYa existe un cliente con ese c\242digo!\n\n";
-                    cout<<"El cliente con ese c\242digo es: "<<alumno1.get_dni()<<"\n\n";
-                    cout<<"Ingresa un c\242digo v\240lido!: ";
+                    cout<<"\n\nYa existe un curso con ese codigo!\n\n";
+                    cout<<"El curso con ese codigo es: "<<alumno1.get_dni()<<"\n\n";
+                    cout<<"Ingresa un codigo valido!: ";
                     getline(cin,dniaux);
                     if(dniaux=="")
                         do
                         {
-                            cout<<"\nc\242digo de cliente no v\240lido!, intentalo nuevamente: ";
+                            cout<<"\n codigo de curso no valido!, intentalo nuevamente: ";
                             getline(cin,dniaux);
                         }
                         while(dniaux=="");
@@ -935,7 +872,7 @@ void Alumnos::inscribirse(Cursos curso1, Alumnos alumno1){
         while(coincidencia==true);
         system(CLEAR);
         iniciar_Dni=dniaux;
-		
+
 			//getline(lecturalogin, iniciar_Dni);
 
 			escritura<<iniciar_Dni<<"\n";
@@ -951,10 +888,12 @@ void Alumnos::inscribirse(Cursos curso1, Alumnos alumno1){
 
 }
 
+//------------------------------------------------------------------------------------------------------------------------------------------------------------//
 
-//-------------------------------------------------------FUNCIONA-----------------------------------------------------//
 
-void Visitante::registrarse(Alumnos alumno1){
+//------------------------------------------Función que permite registrar un Visitante al sistema-----------------------------------------------------//
+
+bool Visitante::registrarse(Alumnos alumno1){
 	
     ofstream escritura; // Sirve para abrir el fichero y escribir en el
     ifstream verificador; // Sirve para abrir el fichero y leer en el
@@ -980,7 +919,7 @@ void Visitante::registrarse(Alumnos alumno1){
         if(DNIPRUEBA=="")
             do
             {
-                cout<<"c\242digo de cliente no v\240lido!, intentalo nuevamente: ";
+                cout<<"DNI de Alumno no v\240lido!, intentalo nuevamente: ";
                 getline(cin,DNIPRUEBA);
             }
             while(DNIPRUEBA=="");
@@ -999,14 +938,14 @@ void Visitante::registrarse(Alumnos alumno1){
                 if(iniciardni==DNIPRUEBA)
                 {
                     coincidencia=true;
-                    cout<<"\n\nYa existe un cliente con ese c\242digo!\n\n";
-                    cout<<"El cliente con ese c\242digo es: "<<alumno1.get_nombre()<<"\n\n";
-                    cout<<"Ingresa un c\242digo v\240lido!: ";
+                    cout<<"\n\nYa existe un alumno con ese c\242digo!\n\n";
+                    cout<<"El alumno con ese DNI es: "<<alumno1.get_nombre()<<"\n\n";
+                    cout<<"Ingresa un DNI valido!: ";
                     getline(cin,DNIPRUEBA);
                     if(DNIPRUEBA=="")
                         do
                         {
-                            cout<<"\nc\242digo de cliente no v\240lido!, intentalo nuevamente: ";
+                            cout<<"\n DNI de alumno no valido!, intentalo nuevamente: ";
                             getline(cin,DNIPRUEBA);
                         }
                         while(DNIPRUEBA=="");
@@ -1025,7 +964,7 @@ void Visitante::registrarse(Alumnos alumno1){
         system(CLEAR);
         alumno1.set_dni(DNIPRUEBA);
         cout<<"\t\t\t\t***Registrar un alumno***\t\t\t\t\n\n";
-        cout<<"Ingresa el c\242digo del alumno a registrar: ";
+        cout<<"Ingresa el DNI del alumno a registrar: ";
         cout<<alumno1.get_dni();
         cout<<"\n\n";
         fflush(stdin);
@@ -1066,10 +1005,10 @@ void Visitante::registrarse(Alumnos alumno1){
     escritura.close();
     verificador.close();
 	//pause();
+    return coincidencia;
+
 }
 
-//-----------------------------------------------------------------------------------------------------------------------//
-
-
+//-------------------------------------------------------------------------------------------------------------------------------------------------//
 
 

@@ -1,3 +1,23 @@
+/*
+ * admin.h
+ *
+ *  Autores: i12cofem e i82gavaj
+ *  Fecha inicio del proyecto: 23/11/2022
+ *  Fecha finalización del proyecto: 06/12/2022
+ *
+ *
+ *
+ */
+/*
+ * En este fichero vamos a tener la definición de la clase Admin, con sus respectivos atributos y métodos
+ *
+ *
+ *
+ *
+ *
+ * */
+
+
 #ifndef ADMIN_H
 #define ADMIN_H
 
@@ -10,8 +30,8 @@ class Admin : public Usuarios{
 		//void eliminar_usuario();
 		//bool comprobar_curso();
 		//void estadisticas();
-		void anadir_curso(Cursos curso1);
-		void borrar_curso(Cursos curso1);
+		bool anadir_curso(Cursos curso1);
+		bool borrar_curso(Cursos curso1);
 		void modificar_curso(Cursos curso1);
 
 

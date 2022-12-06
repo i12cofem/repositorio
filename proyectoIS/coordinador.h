@@ -1,3 +1,5 @@
+/*
+
 #ifndef COORDINADOR_H
 #define COORDINADOR_H
 #include "usuarios.h"
@@ -11,3 +13,5 @@ class Coordinador : public Usuarios {
 };
 
 #endif
+
+*/

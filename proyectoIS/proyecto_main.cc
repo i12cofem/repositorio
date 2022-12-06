@@ -1,12 +1,17 @@
 /*
- * main.cc
+ * proyecto_main.cc
  *
- *  Created on: 28 nov. 2022
- *      Author: delprado__
+ *  Autores: i12cofem e i82gavaj
+ *  Fecha inicio del proyecto: 23/11/2022
+ *  Fecha finalización del proyecto: 06/12/2022.
+ *
+ *
+ *
  */
 /*
- * Aqui vamos a tenr el menu de los ficheros que vamos a usar
- * como interfaz dentro del trabajo ..
+ * En este fichero vamos a tener el main principal de la aplicación mediante el cual el usuario va
+ * a interactuar con la aplicación
+ *
  *
  *
  *
@@ -269,7 +274,6 @@ int main(){
 
 
 /*
-
 	string respuesta;
 	string confirmacion="si";
 	int eleccion;
@@ -294,7 +298,6 @@ int main(){
 				cout<<"|-------------------------------------------------------------------------------------------------------------------------|"<<endl;
 				cout<<"|                                                    @Menu ADMIN@                                                         |"<<endl;
 				cout<<"|-------------------------------------------------------------------------------------------------------------------------|"<<endl;
-
 					do{ cout<<"|-------------------------------------------------------------------------------------------------------------------------|"<<endl;
 						cout<<"|                                                    1.-Crear Cursos                                                      |"<<endl;
 						cout<<"|                                                    2.-Listar Cursos                                                     |"<<endl;
@@ -302,7 +305,6 @@ int main(){
 						cout<<"|-------------------------------------------------------------------------------------------------------------------------|"<<endl;
 						cin>>eleccion;
 						switch(eleccion){
-
 							case 1:
 							{
 									Admin aux("0","0","0","0","0");//Existe un admin auxiliar al que se le asigna la funcion de añadir curso;
@@ -313,10 +315,8 @@ int main(){
 							{
 									Admin aux("0","0","0","0","0"); //Existe un usuario auxiliar al que se le asigna la funcion para listar todos los cursos
 									aux.mostrar_cursos();
-
 							}
 								break;
-
 							default:
 								return 0;
 								break;
@@ -324,14 +324,12 @@ int main(){
 					}while(eleccion!=3);
 			}
 		}else{
-
 			cout<<"|-------------------------------------------------------------------------------------------------------------------------|"<<endl;
 			cout<<"|                                         ACCEDIENDO AL MENU DE VISITANTES...ESPERE                                       |"<<endl;
 			cout<<"|-------------------------------------------------------------------------------------------------------------------------|"<<endl;
 			cout<<"|                                                ¿ES USTED ALUMNO DEL SISTEMA?                                            |"<<endl;
 			cout<<"|-------------------------------------------------------------------------------------------------------------------------|"<<endl;
 			cin>>respuesta;
-
 			if(respuesta=="si"){
 				cout<<"|-------------------------------------------------------------------------------------------------------------------------|"<<endl;
 				cout<<"|                                         ACCEDIENDO AL MENU DE ALUMNOS...ESPERE                                          |"<<endl;
@@ -363,9 +361,7 @@ int main(){
 						break;
 					}
 				}while(eleccion!=4);
-
 			}else{
-
 			do{
 					cout<<"|-------------------------------------------------------------------------------------------------------------------------|"<<endl;
 					cout<<"|                                                1.-Registrar usuario                                                     |"<<endl;
@@ -379,8 +375,6 @@ int main(){
 							{
 								Visitante aux(0);
 								aux.registrarse();
-
-
 								break;
 							}
 							case 2:
@@ -395,20 +389,12 @@ int main(){
 									//u.mostrar_cursos();
 							}
 							break;
-
 							default:
 								return 0;
 								break;
 							}
 				}while(eleccion!=4);
 		}
-
 		}
-
 		return 0;
-
-
-
-
-
 */

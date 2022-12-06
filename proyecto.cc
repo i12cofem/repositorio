@@ -1,5 +1,14 @@
 /*
+ * Iniciado 25/11 --- Creado 30/11
+ * AUTHOR: i82gavaj & i12cofem
+ *
  */
+/*
+ * PROGRAMA FINALIZADO DIA: 06/12/2022
+ *
+ *
+ *
+ * */
 #include <iostream>
 #include <conio.h>
 #include <string.h>

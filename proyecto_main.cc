@@ -1,12 +1,10 @@
 /*
- * main.cc
+ * Iniciado 25/11 --- Creado 30/11
+ * AUTHOR: i82gavaj & i12cofem
  *
- *  Created on: 28 nov. 2022
- *      Author: delprado__
  */
 /*
- * Aqui vamos a tenr el menu de los ficheros que vamos a usar
- * como interfaz dentro del trabajo pp
+ * PROGRAMA FINALIZADO DIA: 06/12/2022
  *
  *
  *

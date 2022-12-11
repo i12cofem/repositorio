@@ -306,7 +306,7 @@ void Admin::modificar_curso(Cursos curso1)
                 curso1.set_descripcion(auxdescripcion);
                 cout<<"\n";
                 fflush(stdin);
-                cout<<"Ingresa el aforo del cliente: ";
+                cout<<"Ingresa el aforo del curso: ";
                 getline(cin, auxaforo);
                 curso1.set_aforo(auxaforo);
                 cout<<"\n";
@@ -427,13 +427,13 @@ bool Admin::borrar_curso(Cursos curso1)
                         strcmp(respuesta,"si")==0||strcmp(respuesta,"SI")==0||
                         strcmp(respuesta,"Si")==0||strcmp(respuesta,"sI")==0)
                 {
-                    cout<<"\nEl cliente se ha dado de baja correctamente\n";
+                    cout<<"\nEl curso se ha dado de baja correctamente\n";
                 }
 
                 else
                 {
 
-                    cout<<"\nCliente conservado\n";
+                    cout<<"\nCurso conservado\n";
                     auxiliar<<iniciar_Codigo<<"\n"<<iniciar_Nombrecurso<<"\n"<<iniciar_Fechainicio<<"\n"<<iniciar_FechaFin
                             <<"\n"<<iniciar_Asignatura<<"\n"<<iniciar_Recurso<<"\n"<<iniciar_Descripcion<<"\n"<<iniciar_aforo<<"\n";
 
@@ -600,7 +600,7 @@ bool Admin::anadir_curso(Cursos curso1){
         if(auxCodigo=="")
             do
             {
-                cout<<"codigo de curso no valido!, intentalo nuevamente: ";
+                cout<<"Codigo de curso no valido!, intentalo nuevamente: ";
                 getline(cin,auxCodigo);
             }
             while(auxCodigo=="");
@@ -696,7 +696,7 @@ bool Admin::anadir_curso(Cursos curso1){
         cout<<"\n";
 		fflush(stdin);
 
-		cout<<"Ingrese el aforo del cliente: ";
+		cout<<"Ingrese el aforo del curso: ";
 		string aforo2;
         getline(cin, aforo2);
 		curso1.set_aforo(aforo2);
@@ -802,7 +802,7 @@ void Alumnos::inscribirse(){
 			            					if(control==2){
 			            								escritura<<dnialumno<<"\n";
 			            								cout<<"|-------------------------------------------------------------------------------------------------------------------------|"<<endl;
-			            								cout<<"|-------------------------------------YA SE HA INSCTRITO A UN CURSO. ¿Bienvenido!-----------------------------------------|"<<endl;
+			            								cout<<"|------------------------------------ YA SE HA INSCTRITO A UN CURSO. Bienvenido ------------------------------------------|"<<endl;
 			            								cout<<"|-------------------------------------------------------------------------------------------------------------------------|"<<endl;
 			            								escritura.close();
 			            								lectura.close();
@@ -859,7 +859,7 @@ bool Visitante::registrarse(Alumnos alumno1){
         if(DNIPRUEBA=="")
             do
             {
-                cout<<"codigo de cliente no valido!, intentalo nuevamente: ";
+                cout<<"Codigo de alumno no valido!, intentalo nuevamente: ";
                 getline(cin,DNIPRUEBA);
             }
             while(DNIPRUEBA=="");
@@ -878,14 +878,14 @@ bool Visitante::registrarse(Alumnos alumno1){
                 if(iniciardni==DNIPRUEBA)
                 {
                     coincidencia=true;
-                    cout<<"\nYa existe un cliente con ese codigo!\n";
-                    cout<<"El cliente con ese codigo es: "<<alumno1.get_nombre()<<"\n";
+                    cout<<"\nYa existe un alumno con ese codigo!\n";
+                    cout<<"El alumno con ese codigo es: "<<alumno1.get_nombre()<<"\n";
                     cout<<"Ingresa un codigo valido!: ";
                     getline(cin,DNIPRUEBA);
                     if(DNIPRUEBA=="")
                         do
                         {
-                            cout<<"\ncodigo de cliente no valido!, intentalo nuevamente: ";
+                            cout<<"\nCodigo de alumno no valido!, intentalo nuevamente: ";
                             getline(cin,DNIPRUEBA);
                         }
                         while(DNIPRUEBA=="");
@@ -920,7 +920,7 @@ bool Visitante::registrarse(Alumnos alumno1){
 		alumno1.set_apellido(apellido2);
         cout<<"\n";
         fflush(stdin);
-        cout<<"Ingresa el correo de la uco del cliente: ";
+        cout<<"Ingresa el correo de la uco del alumno: ";
 		string correouco2;
         getline(cin, correouco2);
 		alumno1.set_correo_uco(correouco2);

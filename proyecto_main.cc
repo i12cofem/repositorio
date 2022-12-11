@@ -46,7 +46,7 @@ void ver_cursos(Cursos curso1)
 
     if(lectura.is_open())
     {
-        cout<<"\t\t\t\t***Listado de todos los clientes***\t\t\t\t\n\n";
+        cout<<"\t\t\t\t***Listado de todos los cursos***\t\t\t\t\n\n";
         getline(lectura,iniciar_Codigo);
         while(!lectura.eof())
         {
@@ -60,7 +60,7 @@ void ver_cursos(Cursos curso1)
             getline(lectura,iniciar_aforo);
 
 
-            cout<<"-------------------------------------------------------------------------------------"<<endl;
+           cout<<"|-------------------------------------------------------------------------------------------------------------------------|"<<endl;
             cout<<"C\242digo: "<<iniciar_Codigo<<endl;
             cout<<"Nombre: "<<iniciar_Nombrecurso<<endl;
             cout<<"Fecha de inicio: "<<iniciar_Fechainicio<<endl;
@@ -69,7 +69,7 @@ void ver_cursos(Cursos curso1)
             cout<<"Recursos disponibles: "<<iniciar_Recurso<<endl;
             cout<<"Descripci\242n del curso: "<<iniciar_Descripcion<<endl;
             cout<<"Aforo: "<<iniciar_aforo<<endl;
-            cout<<"--------------------------------------------------------------------------------------"<<endl;
+            cout<<"|-------------------------------------------------------------------------------------------------------------------------|"<<endl;
             cout<<"\n\n";
             getline(lectura,iniciar_Codigo);
         }

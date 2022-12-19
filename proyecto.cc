@@ -124,7 +124,7 @@ void Usuarios::visualizar_cursos(Cursos curso1, string codigo){
 
 
 
-//---------------------------------------------------FUNCIONA-------------------------------------------//
+//---------------------------------------------------NO FUNCIONA-------------------------------------------//
 
 
 
@@ -137,45 +137,39 @@ void Admin::modificar_curso(Cursos curso1)
     ofstream auxiliar;
     string auxCodigo;
     string codigoModif;
-    string auxcurso;
-    string auxinicio;
-    string auxfinal;
+    string auxNombrecurso;
+    string auxfechainicio;
+    string auxfechafinal;
     string auxasignatura;
     string auxrecursos;
     string auxdescripcion;
     string auxaforo;
-    //------------------------------------------Iniciadores----------------------------------------//
-	string iniciar_Codigo = curso1.get_idCurso();
-	string iniciar_Nombrecurso = curso1.get_nombreCurso();
-	string iniciar_Fechainicio = curso1.get_fechaInicio();
-	string iniciar_FechaFin = curso1.get_fechaFin();
-	string iniciar_Asignatura = curso1.get_asignatura();
-	string iniciar_Recurso = curso1.get_recursos();
-	string iniciar_Descripcion = curso1.get_descripcion();
-	string iniciar_aforo = curso1.get_aforo();
-
-	//---------------------------------------------------------------------------------------------//
-
-
-
+    string cursoid;
+    string nombrecurso;
+    string fechainicio;
+    string fechafinal;
+    string asignatura;
+    string recursos;
+    string descripcion;
+    string aforo;
     bool encontrado=false;
     bool coincidencia=false;
     bool mismoCodigo=false;
     lectura.open("cursos.txt",ios::in);
     verificador.open("cursos.txt",ios::in);
-    auxiliar.open("auxiliar.txt",ios::app);
-    cout<<"\t\t\t\t***Modificar los datos de un curso***\t\t\t\t\n";
+    auxiliar.open("auxiliar.txt",ios::out);
+    cout<<"\t\t\t\t***Modificar los datos de un curso***\t\t\t\t\n\n";
     if(lectura.is_open()&&verificador.is_open()&&auxiliar.is_open())
     {
         fflush(stdin);
-        cout<<"Ingrese el codigo del curso que desee modificar: ";
+        cout<<"Ingresa el codigo del curso que deseas modificar: ";
         getline(cin,auxCodigo);
 
         if(auxCodigo=="")
         {
             do
             {
-                cout<<"codigo del curso no valido!, intentalo nuevamente: ";
+                cout<<"codigo de curso no valido!, intentalo nuevamente: ";
                 getline(cin,auxCodigo);
             }
             while(auxCodigo=="");
@@ -183,25 +177,25 @@ void Admin::modificar_curso(Cursos curso1)
 
         codigoModif=auxCodigo;
 
-        getline(lectura,iniciar_Codigo);
+        getline(lectura,cursoid);
         while(!lectura.eof())
         {
-            getline(lectura,iniciar_Nombrecurso);
-            getline(lectura,iniciar_Fechainicio);
-            getline(lectura,iniciar_FechaFin);
-            getline(lectura,iniciar_Asignatura);
-            getline(lectura,iniciar_Recurso);
-            getline(lectura,iniciar_Descripcion);
-            getline(lectura,iniciar_aforo);
+            getline(lectura,nombrecurso);
+            getline(lectura,fechainicio);
+            getline(lectura,fechafinal);
+            getline(lectura,asignatura);
+            getline(lectura,recursos);
+            getline(lectura,descripcion);
+            getline(lectura,aforo);
 
-            if(auxCodigo==iniciar_Codigo)
+            if(auxCodigo==cursoid)
             {
                 encontrado=true;
                 //mostarRegistro(codigoModif);
 
-                cout<<"|-------------------------------------------------------------------------------------------------------------------------|"<<endl;
-                cout<<"\n";
-
+                cout<<"**********************************************";
+                cout<<"\n\n";
+                cout<<"Ingresa la nueva informacion para el curso\n\n";
                 fflush(stdin);
                 cout<<"Ingresa el codigo del curso: ";
                 getline(cin,auxCodigo);
@@ -219,22 +213,22 @@ void Admin::modificar_curso(Cursos curso1)
                             break;
                         }
                         verificador.seekg(0);
-                        getline(verificador,iniciar_Codigo);
+                        getline(verificador,cursoid);
                         while(!verificador.eof())
                         {
-                            getline(verificador,iniciar_Nombrecurso);
-                            getline(verificador,iniciar_Fechainicio);
-                            getline(verificador,iniciar_FechaFin);
-                            getline(verificador,iniciar_Asignatura);
-                            getline(verificador,iniciar_Recurso);
-                            getline(verificador,iniciar_Descripcion);
-                            getline(verificador,iniciar_aforo);
+                            getline(verificador,nombrecurso);
+                            getline(verificador,fechainicio);
+                            getline(verificador,fechafinal);
+                            getline(verificador,asignatura);
+                            getline(verificador,recursos);
+                            getline(verificador,descripcion);
+                            getline(verificador,aforo);
 
-                            if(auxCodigo==iniciar_Codigo)
+                            if(auxCodigo==cursoid)
                             {
                                 coincidencia=true;
-                                cout<<"\nYa existe un curso con ese codigo!\n";
-                                cout<<"El curso con ese codigo es: "<<iniciar_Nombrecurso<<"\n";
+                                cout<<"\n\nYa existe un curso con ese codigo!\n\n";
+                                cout<<"El curso con ese codigo es: "<<nombrecurso<<"\n\n";
                                 cout<<"Ingresa un codigo valido!: ";
                                 getline(cin,auxCodigo);
 
@@ -242,7 +236,7 @@ void Admin::modificar_curso(Cursos curso1)
                                 {
                                     do
                                     {
-                                        cout<<"\nCodigo de curso no valido!, ";
+                                        cout<<"\ncodigo de curso no valido!, ";
                                         cout<<"intentalo nuevamente: ";
                                         getline(cin,auxCodigo);
                                     }
@@ -251,10 +245,10 @@ void Admin::modificar_curso(Cursos curso1)
                                 break;
                             }
 
-                            getline(verificador,iniciar_Codigo);
+                            getline(verificador,cursoid);
                         }
 
-                        if(verificador.eof()&&auxCodigo!=iniciar_Codigo)
+                        if(verificador.eof()&&auxCodigo!=cursoid)
                         {
                             coincidencia=false;
                         }
@@ -263,88 +257,73 @@ void Admin::modificar_curso(Cursos curso1)
                     while(coincidencia==true);
                 }
                 system(CLEAR);
-                cout<<"***Modificar los datos de un curso***\n";
+                cout<<"***Modificar los datos de un curso***\n\n";
                 cout<<"Ingresa el codigo del curso que deseas modificar: ";
-                fflush(stdin);
                 cout<<codigoModif;
-                //mostarRegistro(codigoModif);
-                cout<<"|-------------------------------------------------------------------------------------------------------------------------|"<<endl;
-                cout<<"\n";
-                cout<<"Ingresa la nueva informacion para el curso\n";
+                cout<<"\n**********************************************";
+                cout<<"\n\n";
+                cout<<"Ingresa la nueva informacion para el curso\n\n";
                 cout<<"Ingresa el codigo del curso: ";
-                cin>>auxCodigo;
-                curso1.set_idCurso(auxCodigo);
-                cout<<"\n";
+                cout<<auxCodigo;
+                cout<<"\n\n";
                 fflush(stdin);
                 cout<<"Ingresa el nombre del curso: ";
-                getline(cin,auxcurso);
-                curso1.set_nombreCurso(auxcurso);
+                getline(cin,auxNombrecurso);;
                 fflush(stdin);
-                cout<<"\n";
+                cout<<"\n\n";
                 cout<<"Ingresa la fecha de inicio del curso: ";
-                getline(cin,auxinicio);
-                curso1.set_fechaInicio(auxinicio);
-                cout<<"\n";
+                getline(cin,auxfechainicio);
+                cout<<"\n\n";
                 fflush(stdin);
-                cout<<"Ingresa la fecha final del curso: ";
-                getline(cin,auxfinal);
-                curso1.set_fechaFin(auxfinal);
-                cout<<"\n";
+                cout<<"Ingresa la fecha final del curso : ";
+                getline(cin,auxfechafinal);
+                cout<<"\n\n";
                 fflush(stdin);
-                cout<<"Ingresa la asignatura del curso: ";
+                cout<<"Ingresa la asignatura: ";
                 getline(cin,auxasignatura);
-                curso1.set_asignatura(auxasignatura);
-                cout<<"\n";
+                cout<<"\n\n";
                 fflush(stdin);
-                cout<<"Ingresa los recursos disponibles para el curso: ";
+                cout<<"Ingresa los recursos del curso: ";
                 getline(cin,auxrecursos);
-                curso1.set_recursos(auxrecursos);
-                cout<<"\n";
+                cout<<"\n\n";
                 fflush(stdin);
-                cout<<"Ingresa la descripcion para el curso: ";
+                cout<<"Ingresa la descripcion del curso: ";
                 getline(cin,auxdescripcion);
-                curso1.set_descripcion(auxdescripcion);
-                cout<<"\n";
+                cout<<"\n\n";
                 fflush(stdin);
                 cout<<"Ingresa el aforo del curso: ";
-                getline(cin, auxaforo);
-                curso1.set_aforo(auxaforo);
-                cout<<"\n";
-                fflush(stdin);
-
-                auxiliar<<curso1.get_idCurso()<<"\n"<<curso1.get_nombreCurso()<<"\n"<<curso1.get_fechaInicio()<<"\n"<<curso1.get_fechaFin()
-                            <<"\n"<<curso1.get_asignatura()<<"\n"<<curso1.get_recursos()<<"\n"<<curso1.get_descripcion()<<"\n"<<curso1.get_aforo()<<"\n";
-                cout<<"El Registro se ha modificado correctamente.\n";
+                getline(cin,auxaforo);
+                cout<<"\n\n";
+                auxiliar<<auxCodigo<<"\n"<<auxNombrecurso<<"\n"<<auxfechainicio<<"\n"<<auxfechafinal
+                        <<"\n"<<auxasignatura<<"\n"<<auxrecursos<<"\n"<<auxdescripcion<<"\n"<<auxaforo<<"\n";
+                cout<<"El Registro se ha modificado correctamente.\n\n";
             }
 
 
             else
             {
-                auxiliar<<curso1.get_idCurso()<<"\n"<<curso1.get_nombreCurso()<<"\n"<<curso1.get_fechaInicio()<<"\n"<<curso1.get_fechaFin()
-                            <<"\n"<<curso1.get_asignatura()<<"\n"<<curso1.get_recursos()<<"\n"<<curso1.get_descripcion()<<"\n"<<curso1.get_aforo()<<"\n";
 
+                auxiliar<<cursoid<<"\n"<<nombrecurso<<"\n"<<fechainicio<<"\n"<<fechafinal
+                        <<"\n"<<asignatura<<"\n"<<recursos<<"\n"<<descripcion<<"\n"<<aforo<<"\n";
             }
 
 
-            getline(lectura,iniciar_Codigo);
+            getline(lectura,cursoid);
         }
 
     }
-/*     else
-    {
-        error();
-    } */ 
+
 
     if(encontrado==false)
     {
-        cout<<"\nNo se encontro ningun registro con ese codigo!\n";
+        cout<<"\n\nNo se encontr\242 ning\243n curso con ese codigo!\n\n";
     }
     lectura.close();
     verificador.close();
     auxiliar.close();
     remove("cursos.txt");
     rename("auxiliar.txt","cursos.txt");
-    //pausa();
+   
 }
 
 
@@ -869,7 +848,7 @@ bool Visitante::registrarse(Alumnos alumno1){
             getline(verificador, iniciardni);
             while(!verificador.eof())
             {
-                getline(verificador, iniciardni);
+                //getline(verificador, iniciardni);
                 getline(verificador,iniciarnombre);
                 getline(verificador,iniciarapellido);
                 getline(verificador,iniciarcorreouco);

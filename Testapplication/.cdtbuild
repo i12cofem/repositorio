@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ManagedProjectBuildInfo>
+    <project id="Testapplication.cdt.managedbuild.target.gnu.mingw.exe.1656098962" name="Executable" projectType="cdt.managedbuild.target.gnu.mingw.exe">
+        <configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.mingw.exe.debug.987535737" name="Debug" optionalBuildProperties="" parent="cdt.managedbuild.config.gnu.mingw.exe.debug">
+            <folderInfo id="cdt.managedbuild.config.gnu.mingw.exe.debug.987535737." name="/" resourcePath="">
+                <toolChain id="cdt.managedbuild.toolchain.gnu.mingw.exe.debug.654074368" name="MinGW GCC" superClass="cdt.managedbuild.toolchain.gnu.mingw.exe.debug">
+                    <targetPlatform id="cdt.managedbuild.target.gnu.platform.mingw.exe.debug.1288372479" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.mingw.exe.debug"/>
+                    <builder buildPath="${workspace_loc:/Testapplication}/Debug" id="cdt.managedbuild.tool.gnu.builder.mingw.base.1361640230" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" superClass="cdt.managedbuild.tool.gnu.builder.mingw.base"/>
+                    <tool id="cdt.managedbuild.tool.gnu.assembler.mingw.exe.debug.21981895" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.mingw.exe.debug">
+                        <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.both.asm.option.include.paths.3328518" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
+                            <listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/cute}&quot;"/>
+                            <listOptionValue builtIn="false" value="&quot;${workspace_loc:/Testapplication/boost}&quot;"/>
+                        </option>
+                        <inputType id="cdt.managedbuild.tool.gnu.assembler.input.1945118206" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+                    </tool>
+                    <tool id="cdt.managedbuild.tool.gnu.archiver.mingw.base.1082603667" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.mingw.base"/>
+                    <tool id="cdt.managedbuild.tool.gnu.cpp.compiler.mingw.exe.debug.954386850" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.mingw.exe.debug">
+                        <option id="gnu.cpp.compiler.mingw.exe.debug.option.optimization.level.1651463819" name="Optimization Level" superClass="gnu.cpp.compiler.mingw.exe.debug.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
+                        <option defaultValue="gnu.cpp.compiler.debugging.level.max" id="gnu.cpp.compiler.mingw.exe.debug.option.debugging.level.627740834" name="Debug Level" superClass="gnu.cpp.compiler.mingw.exe.debug.option.debugging.level" useByScannerDiscovery="false" valueType="enumerated"/>
+                        <option id="gnu.cpp.compiler.option.dialect.flags.1267475773" name="Other dialect flags" superClass="gnu.cpp.compiler.option.dialect.flags" useByScannerDiscovery="true" value="-std=c++1z" valueType="string"/>
+                        <option id="gnu.cpp.compiler.option.other.other.894463915" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" useByScannerDiscovery="false" value="-c -fmessage-length=0 -Wno-attributes" valueType="string"/>
+                        <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.include.paths.1128006612" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+                            <listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/cute}&quot;"/>
+                            <listOptionValue builtIn="false" value="&quot;${workspace_loc:/Testapplication/boost}&quot;"/>
+                        </option>
+                        <inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1915587369" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+                    </tool>
+                    <tool id="cdt.managedbuild.tool.gnu.c.compiler.mingw.exe.debug.1711944591" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.mingw.exe.debug">
+                        <option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.mingw.exe.debug.option.optimization.level.1688466120" name="Optimization Level" superClass="gnu.c.compiler.mingw.exe.debug.option.optimization.level" useByScannerDiscovery="false" valueType="enumerated"/>
+                        <option defaultValue="gnu.c.debugging.level.max" id="gnu.c.compiler.mingw.exe.debug.option.debugging.level.1982999603" name="Debug Level" superClass="gnu.c.compiler.mingw.exe.debug.option.debugging.level" useByScannerDiscovery="false" valueType="enumerated"/>
+                        <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.include.paths.1968792439" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+                            <listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/cute}&quot;"/>
+                            <listOptionValue builtIn="false" value="&quot;${workspace_loc:/Testapplication/boost}&quot;"/>
+                        </option>
+                        <inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1813846347" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+                    </tool>
+                    <tool id="cdt.managedbuild.tool.gnu.c.linker.mingw.exe.debug.273798337" name="MinGW C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.mingw.exe.debug"/>
+                    <tool id="cdt.managedbuild.tool.gnu.cpp.linker.mingw.exe.debug.1294589722" name="MinGW C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.mingw.exe.debug">
+                        <inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.728846411" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
+                            <additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+                            <additionalInput kind="additionalinput" paths="$(LIBS)"/>
+                        </inputType>
+                    </tool>
+                </toolChain>
+            </folderInfo>
+            <sourceEntries>
+                <entry excluding="cute" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+                <entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="cute"/>
+            </sourceEntries>
+        </configuration>
+        <configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.mingw.exe.release.938050205" name="Release" parent="cdt.managedbuild.config.gnu.mingw.exe.release">
+            <folderInfo id="cdt.managedbuild.config.gnu.mingw.exe.release.938050205." name="/" resourcePath="">
+                <toolChain id="cdt.managedbuild.toolchain.gnu.mingw.exe.release.1359083727" name="MinGW GCC" superClass="cdt.managedbuild.toolchain.gnu.mingw.exe.release">
+                    <targetPlatform id="cdt.managedbuild.target.gnu.platform.mingw.exe.release.876439769" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.mingw.exe.release"/>
+                    <builder buildPath="${workspace_loc:/Testapplication}/Release" id="cdt.managedbuild.tool.gnu.builder.mingw.base.1477303255" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" superClass="cdt.managedbuild.tool.gnu.builder.mingw.base"/>
+                    <tool id="cdt.managedbuild.tool.gnu.assembler.mingw.exe.release.1175863564" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.mingw.exe.release">
+                        <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.both.asm.option.include.paths.498276008" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
+                            <listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/cute}&quot;"/>
+                            <listOptionValue builtIn="false" value="&quot;${workspace_loc:/Testapplication/boost}&quot;"/>
+                        </option>
+                        <inputType id="cdt.managedbuild.tool.gnu.assembler.input.2104373751" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+                    </tool>
+                    <tool id="cdt.managedbuild.tool.gnu.archiver.mingw.base.499435485" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.mingw.base"/>
+                    <tool id="cdt.managedbuild.tool.gnu.cpp.compiler.mingw.exe.release.535453718" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.mingw.exe.release">
+                        <option id="gnu.cpp.compiler.mingw.exe.release.option.optimization.level.992014572" name="Optimization Level" superClass="gnu.cpp.compiler.mingw.exe.release.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.most" valueType="enumerated"/>
+                        <option defaultValue="gnu.cpp.compiler.debugging.level.none" id="gnu.cpp.compiler.mingw.exe.release.option.debugging.level.1224680274" name="Debug Level" superClass="gnu.cpp.compiler.mingw.exe.release.option.debugging.level" useByScannerDiscovery="false" valueType="enumerated"/>
+                        <option id="gnu.cpp.compiler.option.dialect.flags.260836004" name="Other dialect flags" superClass="gnu.cpp.compiler.option.dialect.flags" useByScannerDiscovery="true" value="-std=c++1z" valueType="string"/>
+                        <option id="gnu.cpp.compiler.option.other.other.299859971" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" useByScannerDiscovery="false" value="-c -fmessage-length=0 -Wno-attributes" valueType="string"/>
+                        <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.include.paths.869078690" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+                            <listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/cute}&quot;"/>
+                            <listOptionValue builtIn="false" value="&quot;${workspace_loc:/Testapplication/boost}&quot;"/>
+                        </option>
+                        <inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1212288887" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+                    </tool>
+                    <tool id="cdt.managedbuild.tool.gnu.c.compiler.mingw.exe.release.23383395" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.mingw.exe.release">
+                        <option defaultValue="gnu.c.optimization.level.most" id="gnu.c.compiler.mingw.exe.release.option.optimization.level.489667337" name="Optimization Level" superClass="gnu.c.compiler.mingw.exe.release.option.optimization.level" useByScannerDiscovery="false" valueType="enumerated"/>
+                        <option defaultValue="gnu.c.debugging.level.none" id="gnu.c.compiler.mingw.exe.release.option.debugging.level.57824025" name="Debug Level" superClass="gnu.c.compiler.mingw.exe.release.option.debugging.level" useByScannerDiscovery="false" valueType="enumerated"/>
+                        <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.include.paths.514804503" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+                            <listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/cute}&quot;"/>
+                            <listOptionValue builtIn="false" value="&quot;${workspace_loc:/Testapplication/boost}&quot;"/>
+                        </option>
+                        <inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1326009510" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+                    </tool>
+                    <tool id="cdt.managedbuild.tool.gnu.c.linker.mingw.exe.release.2077247285" name="MinGW C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.mingw.exe.release"/>
+                    <tool id="cdt.managedbuild.tool.gnu.cpp.linker.mingw.exe.release.381053349" name="MinGW C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.mingw.exe.release">
+                        <inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1284725019" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
+                            <additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+                            <additionalInput kind="additionalinput" paths="$(LIBS)"/>
+                        </inputType>
+                    </tool>
+                </toolChain>
+            </folderInfo>
+            <sourceEntries>
+                <entry excluding="cute" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+                <entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="cute"/>
+            </sourceEntries>
+        </configuration>
+        <configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="" id="gcov" name="Debug Gcov" optionalBuildProperties="" parent="cdt.managedbuild.config.gnu.mingw.exe.debug">
+            <folderInfo id="gcov." name="/" resourcePath="">
+                <toolChain id="cdt.managedbuild.toolchain.gnu.mingw.exe.debug.978210120" name="MinGW GCC" superClass="cdt.managedbuild.toolchain.gnu.mingw.exe.debug">
+                    <targetPlatform id="cdt.managedbuild.target.gnu.platform.mingw.exe.debug.715553484" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.mingw.exe.debug"/>
+                    <builder buildPath="${workspace_loc:/Testapplication}/Debug" id="cdt.managedbuild.tool.gnu.builder.mingw.base.1304993501" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" superClass="cdt.managedbuild.tool.gnu.builder.mingw.base"/>
+                    <tool id="cdt.managedbuild.tool.gnu.assembler.mingw.exe.debug.277412023" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.mingw.exe.debug">
+                        <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.both.asm.option.include.paths.1924503946" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
+                            <listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/cute}&quot;"/>
+                            <listOptionValue builtIn="false" value="&quot;${workspace_loc:/Testapplication/boost}&quot;"/>
+                        </option>
+                        <inputType id="cdt.managedbuild.tool.gnu.assembler.input.1844991366" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+                    </tool>
+                    <tool id="cdt.managedbuild.tool.gnu.archiver.mingw.base.220329215" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.mingw.base"/>
+                    <tool id="cdt.managedbuild.tool.gnu.cpp.compiler.mingw.exe.debug.1095729911" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.mingw.exe.debug">
+                        <option id="gnu.cpp.compiler.mingw.exe.debug.option.optimization.level.1192929070" name="Optimization Level" superClass="gnu.cpp.compiler.mingw.exe.debug.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
+                        <option defaultValue="gnu.cpp.compiler.debugging.level.max" id="gnu.cpp.compiler.mingw.exe.debug.option.debugging.level.2000488157" name="Debug Level" superClass="gnu.cpp.compiler.mingw.exe.debug.option.debugging.level" useByScannerDiscovery="false" valueType="enumerated"/>
+                        <option id="gnu.cpp.compiler.option.dialect.flags.1642878579" name="Other dialect flags" superClass="gnu.cpp.compiler.option.dialect.flags" useByScannerDiscovery="true" value="-std=c++1z" valueType="string"/>
+                        <option id="gnu.cpp.compiler.option.other.other.740973990" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" useByScannerDiscovery="false" value="-c -fmessage-length=0 -Wno-attributes" valueType="string"/>
+                        <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.include.paths.1296945643" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+                            <listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/cute}&quot;"/>
+                            <listOptionValue builtIn="false" value="&quot;${workspace_loc:/Testapplication/boost}&quot;"/>
+                        </option>
+                        <option id="gnu.cpp.compiler.option.debugging.codecov.117398505" superClass="gnu.cpp.compiler.option.debugging.codecov" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+                        <inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.73231191" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+                    </tool>
+                    <tool id="cdt.managedbuild.tool.gnu.c.compiler.mingw.exe.debug.149295727" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.mingw.exe.debug">
+                        <option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.mingw.exe.debug.option.optimization.level.719130074" name="Optimization Level" superClass="gnu.c.compiler.mingw.exe.debug.option.optimization.level" useByScannerDiscovery="false" valueType="enumerated"/>
+                        <option defaultValue="gnu.c.debugging.level.max" id="gnu.c.compiler.mingw.exe.debug.option.debugging.level.1957501108" name="Debug Level" superClass="gnu.c.compiler.mingw.exe.debug.option.debugging.level" useByScannerDiscovery="false" valueType="enumerated"/>
+                        <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.include.paths.1729336088" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+                            <listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/cute}&quot;"/>
+                            <listOptionValue builtIn="false" value="&quot;${workspace_loc:/Testapplication/boost}&quot;"/>
+                        </option>
+                        <option id="gnu.c.compiler.option.debugging.codecov.2011264179" superClass="gnu.c.compiler.option.debugging.codecov" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+                        <option id="gnu.c.compiler.option.misc.other.1801326760" superClass="gnu.c.compiler.option.misc.other" useByScannerDiscovery="false" value="-c -fmessage-length=0 -std=c99 " valueType="string"/>
+                        <inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1046644608" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+                    </tool>
+                    <tool id="cdt.managedbuild.tool.gnu.c.linker.mingw.exe.debug.572625446" name="MinGW C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.mingw.exe.debug"/>
+                    <tool id="cdt.managedbuild.tool.gnu.cpp.linker.mingw.exe.debug.444990073" name="MinGW C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.mingw.exe.debug">
+                        <option id="gnu.cpp.link.option.flags.816766814" superClass="gnu.cpp.link.option.flags" value=" -fprofile-arcs -ftest-coverage -std=c99" valueType="string"/>
+                        <inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.2123230553" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
+                            <additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+                            <additionalInput kind="additionalinput" paths="$(LIBS)"/>
+                        </inputType>
+                    </tool>
+                </toolChain>
+            </folderInfo>
+            <sourceEntries>
+                <entry excluding="cute" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+                <entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="cute"/>
+            </sourceEntries>
+        </configuration>
+    </project>
+</ManagedProjectBuildInfo>
